@@ -1,0 +1,22 @@
+"*":
+  "exception-reporting":
+    userId: "8759fac4-efe0-8ff8-9af2-a5b6f556f668"
+  "release-notes":
+    viewedVersion: "0.73.0"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "b6ce4bb3767f54e32dc83303aeffb24023c9ffaf"
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "line-jumper"
+    ]
+  editor:
+    invisibles:
+      {}
+    autoIndentOnPaste: false
+    fontSize: 12
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true

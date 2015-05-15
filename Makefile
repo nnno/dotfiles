@@ -19,7 +19,7 @@ list:
 	@$(foreach val, $(DOTFILES_FILES), ls -dF $(val);)
 
 update:
-	git pull origin master
+	#git pull origin master
 
 deploy:
 	@$(foreach val, $(DOTFILES_FILES), ln -snfv $(abspath $(val)) $(HOME)/$(val);)
@@ -36,6 +36,9 @@ homebrew:
 brew: homebrew
 	@-bash $(DOTFILES_DIR)/etc/init/osx/install_brew.sh
 
+atom:
+	@-bash $(DOTFILES_DIR)/etc/init/osx/init_atom.sh
+
 endif
 
 install: update deploy init
@@ -45,4 +48,3 @@ clean:
 	@echo "Remove dotfiles in your home directory"
 	@-$(foreach val, $(DOTFILES_FILES), rm -vrf $(HOME)/$(val);)
 	-rm -rf $(DOTFILES_DIR)
-

@@ -73,4 +73,5 @@ cask 'sublime-text'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'xquartz'
+cask 'atom'
 

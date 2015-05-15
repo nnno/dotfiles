@@ -1,0 +1,10 @@
+storage
+compile-cache
+dev
+.npm
+.node-gyp
+packages
+*.log
+node_modules
+.apm
+atom-shell
