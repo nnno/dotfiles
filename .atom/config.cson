@@ -12,11 +12,40 @@
     disabledPackages: [
       "line-jumper"
     ]
+    themes: [
+      "flatland-dark-ui"
+      "one-dark-syntax"
+    ]
   editor:
     invisibles:
       {}
     autoIndentOnPaste: false
-    fontSize: 12
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
+    fontFamily: "Source Code Pro"
+    lineHeight: 1.7
+    fontSize: 12
+    preferredLineLength: 120
+  docblockr:
+    {}
+  "autocomplete-plus":
+    {}
+  linter:
+    {}
+  "block-cursor":
+    primaryColor:
+      red: 0
+      green: 249
+      blue: 0
+      alpha: 1
+  term2:
+    colors:
+      {}
+".html.php.text":
+  editor:
+    preferredLineLength: 120
+    tabLength: 4
+".jade.source":
+  editor:
+    preferredLineLength: 120
