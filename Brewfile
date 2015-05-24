@@ -56,6 +56,7 @@ brew 'unixodbc'
 brew 'wget'
 brew 'zlib'
 brew 'zsh', args: ['enable-etcdir']
+brew 'pt'
 
 brew 'brew-cask'
 cask 'alfred'
