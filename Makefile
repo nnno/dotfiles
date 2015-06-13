@@ -1,6 +1,6 @@
 DOTFILES_GITHUB   := "https://github.com/nnno/dotfiles.git"
 DOTFILES_EXCLUDES := .DS_Store .git .gitmodules
-DOTFILES_TARGET   := $(wildcard .??*) bin
+DOTFILES_TARGET   := $(wildcard .??*)
 DOTFILES_DIR      := $(PWD)
 DOTFILES_FILES    := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
 
@@ -19,7 +19,7 @@ list:
 	@$(foreach val, $(DOTFILES_FILES), ls -dF $(val);)
 
 update:
-	#git pull origin master
+	git pull origin master
 
 deploy:
 	@$(foreach val, $(DOTFILES_FILES), ln -snfv $(abspath $(val)) $(HOME)/$(val);)
