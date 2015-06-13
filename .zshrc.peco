@@ -1,0 +1,9 @@
+# setting for peco / percol
+
+for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
+#bindkey '^r' peco-select-history
+bindkey '^r' anyframe-widget-put-history
+#bindkey '^x^f' peco-filefind
+bindkey '^xb' anyframe-widget-cdr
+bindkey '^x^b' anyframe-widget-checkout-git-branch
+

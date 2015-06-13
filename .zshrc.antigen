@@ -1,0 +1,35 @@
+if [[ -f $HOME/work/antigen/antigen.zsh ]]; then
+
+  source  $HOME/work/antigen/antigen.zsh
+
+  # Load the oh-my-zsh's library.
+  #antigen-lib
+  antigen-use oh-my-zsh
+
+  # Bundles from the default app.
+  antigen-bundles <<EOBUNDLES
+  autojump
+  git
+  github
+  svn
+  heroku
+  npm
+  urltools
+EOBUNDLES
+
+  case "${OSTYPE}" in
+    freebsd*|darwin*)
+      antigen-bundle brew
+      ;;
+    linux*)
+      ;;
+  esac
+
+  # Syntax highlighting bundle.
+  antigen-bundle zsh-users/zsh-syntax-highlighting
+  antigen-bundle mollifier/anyframe
+
+  # Tell antigen that you're done.
+  antigen-apply
+
+fi
