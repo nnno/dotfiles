@@ -1,9 +1,13 @@
 tap 'caskroom/homebrew-cask'
+tap 'caskroom/fonts'
 tap 'homebrew/binary'
 tap 'homebrew/bundle'
 tap 'homebrew/dupes'
 tap 'homebrew/php'
 tap 'peco/peco'
+
+
+
 
 brew 'autoconf'
 brew 'automake'
@@ -76,4 +80,8 @@ cask 'xquartz'
 cask 'atom'
 cask 'slack'
 cask 'the-unarchiver'
+cask 'font-source-code-pro'
+cask 'font-source-code-pro-for-powerline'
+
+
 

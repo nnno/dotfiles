@@ -1,0 +1,12 @@
+# ~/.zshrc.Sandalphon
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH=$HOME/bin:`brew --prefix`/bin:$PATH
+# for PHP56
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+# composer
+export PATH=$PATH:$HOME/.composer/vendor/bin
+# peco
+source $HOME/.zshrc.peco
+# for tmux
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
