@@ -85,3 +85,6 @@ cask 'font-source-code-pro-for-powerline'
 
 
 
+cask 'java'
+brew 'sbt'
+
