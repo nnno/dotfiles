@@ -71,6 +71,7 @@ cask 'slack'
 cask 'the-unarchiver'
 cask 'font-source-code-pro'
 cask 'font-source-code-pro-for-powerline'
+cask 'skype'
 
 brew 'php56'
 brew 'php56-apcu'
@@ -85,5 +86,7 @@ brew 'mecab'
 brew 'mecab-ipadic'
 
 cask 'java'
+brew 'scala'
 brew 'sbt'
 
+brew 'node'
