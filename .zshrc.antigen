@@ -1,6 +1,6 @@
-if [[ -f $HOME/work/antigen/antigen.zsh ]]; then
+if [[ -f $HOME/antigen/antigen.zsh ]]; then
 
-  source  $HOME/work/antigen/antigen.zsh
+  source  $HOME/antigen/antigen.zsh
 
   # Load the oh-my-zsh's library.
   #antigen-lib
