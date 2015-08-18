@@ -50,7 +50,6 @@ brew 'zlib'
 brew 'pt'
 brew 'zsh', args: ['enable-etcdir']
 
-
 brew 'brew-cask'
 cask 'alfred'
 cask 'appcleaner'
@@ -90,3 +89,8 @@ brew 'scala'
 brew 'sbt'
 
 brew 'node'
+
+brew 'python3'
+brew 'unison'
+brew 'awscli'
+
