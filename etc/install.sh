@@ -3,7 +3,12 @@
 DOTPATH=~/dotfiles
 DOTFILES_GITHUB="https://github.com/nnno/dotfiles.git"
 
-if has "git"; then
+has() {
+    which "$1" >/dev/null 2>&1
+    return $?
+}
+
+if  "git"; then
     git clone --recursive "$DOTFILES_GITHUB" "$DOTPATH"
 elif has "curl" || has "wget"; then
     tarball="https://github.com/b4b4r07/dotfiles/archive/master.tar.gz"
