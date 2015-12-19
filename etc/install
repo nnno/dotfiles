@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 DOTPATH=~/dotfiles
 DOTFILES_GITHUB="https://github.com/nnno/dotfiles.git"
