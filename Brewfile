@@ -19,19 +19,20 @@ brew 'brew-cask'
 
 # development
 # -----------------------------------------------------------------------------
+brew 'zsh', args: ['enable-etcdir']
 brew 'git'
-brew 'go'
+brew 'tmux'
+brew 'reattach-to-user-namespace'
+
 brew 'jq'
 brew 'macvim'
 brew 'mobile-shell'
 brew 'peco'
 brew 'sshfs'
-brew 'tmux'
 brew 'pt'
-brew 'zsh', args: ['enable-etcdir']
-brew 'awscli'
 brew 'unison'
 brew 'wget'
+brew 'awscli'
 
 cask 'virtualbox'
 cask 'vagrant'
@@ -90,6 +91,7 @@ brew 'sbt'
 # other language
 # -----------------------------------------------------------------------------
 brew 'node'
+brew 'go'
 #brew 'python3'
 
 # Tools
