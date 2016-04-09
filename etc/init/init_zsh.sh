@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cd $HOME/
+#cd $HOME/
 
 # First, clear directory
-rm -rf ~/antigen
+#rm -rf ~/antigen
 
 # Step 1: Install Antigen
-git clone https://github.com/zsh-users/antigen.git
+#git clone https://github.com/zsh-users/antigen.git
 
