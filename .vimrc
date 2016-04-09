@@ -2,10 +2,8 @@
 "
 " .vimrc
 " author nnno <nnno@nnno.jp>
-" Based on http://www.kawaz.jp/pukiwiki/?vim#content_1_0
 "
 "============================================================
-
 
 "----------------------------------------------------
 " NeoBundle
@@ -14,67 +12,55 @@
 if 0 | endif
 
 if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set rtp+=~/.vim/plugged/vim-plug
+  if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+    echo 'install vim-plug...'
+    call system('mkdir -p ~/.vim/plugged/vim-plug')
+    call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+  end
 endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/vim-plug', {'dir': '~/.vim/plugged/vim-plug/autoload'}
+Plug 'itchyny/lightline.vim'
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#end()
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'Shougo/vimproc'
-NeoBundle 'ujihisa/unite-locate'
-NeoBundle 'taglist.vim'
-NeoBundle 'ZenCoding.vim'
-NeoBundle 'ref.vim'
-NeoBundle 'The-NERD-tree'
-NeoBundle 'The-NERD-Commenter'
-NeoBundle 'fugitive.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'thinca/vim-localrc'
-NeoBundle 'dbext.vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/unite-advent_calendar'
-NeoBundle 'open-browser.vim'
-NeoBundle 'ctrlp.vim'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'altercation/vim-colors-solarized'  "Color Scheme
-NeoBundle 'tsaleh/vim-align'
-NeoBundle 'vim-scripts/svn-diff.vim'
-NeoBundle 'vim-scripts/nginx.vim'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'soh335/vim-ref-pman'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'PDV--phpDocumentor-for-Vim'
-NeoBundle 'yanktmp.vim'
-NeoBundle 'Markdown'
-NeoBundle 'jason0x43/vim-js-indent'
-NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'hhvm/vim-hack'
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
+"if has('vim_starting')
+"  if &compatible
+"    set nocompatible
+"  endif
+"  set runtimepath+=~/.vim/bundle/neobundle.vim/
+"endif
+"call neobundle#begin(expand('~/.vim/bundle/'))
+"  NeoBundleFetch 'Shougo/neobundle.vim'
+"
+"NeoBundle 'L9'
+"
+"NeoBundle 'Shougo/neobundle.vim'
+"NeoBundle 'Shougo/neocomplcache'
+"NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'ujihisa/unite-locate'
+"NeoBundle 'taglist.vim'
+"NeoBundle 'The-NERD-tree'
+"NeoBundle 'The-NERD-Commenter'
+"NeoBundle 'fugitive.vim'
+"NeoBundle 'thinca/vim-quickrun'
+"NeoBundle 'thinca/vim-localrc'
+"NeoBundle 'dbext.vim'
+"NeoBundle 'mattn/webapi-vim'
+"NeoBundle 'mattn/unite-advent_calendar'
+"NeoBundle 'open-browser.vim'
+"NeoBundle 'ctrlp.vim'
+"NeoBundle 'altercation/vim-colors-solarized'  "Color Scheme
+"NeoBundle 'yanktmp.vim'
+"call neobundle#end()
+"filetype plugin indent on
+"
+"" If there are uninstalled bundles found on startup,
+"" this will conveniently prompt you to install them.
+"NeoBundleCheck
+"
 set nocompatible
 
 "----------------------------------------------------
