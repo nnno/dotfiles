@@ -20,6 +20,8 @@ list:
 
 update:
 	git pull origin master
+	git submodule init
+	git submodule update
 
 deploy:
 	@$(foreach val, $(DOTFILES_FILES), ln -snfv $(abspath $(val)) $(HOME)/$(val);)

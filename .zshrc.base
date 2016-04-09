@@ -114,6 +114,8 @@ esac
 # ファイルリスト補完でもlsと同様に色をつける｡
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+zstyle ':completion:*' use-cache true
+
 ########################################
 ## Functions
 ########################################
@@ -123,5 +125,4 @@ source $HOME/.zsh/do-enter.zsh
 
 # cd をしたときにlsを実行する
 chpwd() { ls }
-
 
