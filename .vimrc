@@ -6,7 +6,7 @@
 "============================================================
 
 "----------------------------------------------------
-" NeoBundle
+" vim-plug
 "----------------------------------------------------
 " Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
@@ -23,20 +23,44 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug', {'dir': '~/.vim/plugged/vim-plug/autoload'}
 Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'vim-scripts/taglist.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'terryma/vim-expand-region'
 
 call plug#end()
 
-"if has('vim_starting')
-"  if &compatible
-"    set nocompatible
-"  endif
-"  set runtimepath+=~/.vim/bundle/neobundle.vim/
-"endif
-"call neobundle#begin(expand('~/.vim/bundle/'))
-"  NeoBundleFetch 'Shougo/neobundle.vim'
-"
-"NeoBundle 'L9'
-"
+"----------------------------------------------------
+" キーマップ
+"----------------------------------------------------
+let mapleader = "\<Space>"
+" 新しいファイルを開く
+nnoremap <Leader>o :CtrlP<CR>
+" <Space><Space>でビジュアルラインモードに切替
+nmap <Leader><Leader> V
+" vを押すたびに1文字>単語>段落...を選択する
+vmap v <Plug>(expand_region_expand)
+" <C-v>で前回の選択範囲に戻す
+vmap <C-v> <Plug>(expand_region_shrink)
+
+"----------------------------------------------------
+" vim-trailing-whitespace
+"----------------------------------------------------
+let g:extra_whitespace_ignored_filetypes = ['unite']
+
+"----------------------------------------------------
+" ctags, taglist
+"----------------------------------------------------
+" Fixme: set tags = tagsするとvimの起動で一旦止まる
+"set tags = tags
+let Tlist_Ctags_Cmd        = "/usr/local/bin/ctags"  " ctagsのコマンド
+let Tlist_Show_One_File    = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Exit_OnlyWindow  = 1
+" \lでtaglistの開閉
+map <silent> <leader>l :TlistToggle<CR>
+
 "NeoBundle 'Shougo/neobundle.vim'
 "NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'Shougo/unite.vim'
@@ -61,7 +85,7 @@ call plug#end()
 "" this will conveniently prompt you to install them.
 "NeoBundleCheck
 "
-set nocompatible
+"set nocompatible
 
 "----------------------------------------------------
 " エンコード
@@ -73,12 +97,12 @@ set encoding=utf-8
 "一般
 "----------------------------------------------------
 set t_Co=256                    "256色化
-set history=100                 "コロンコマンドを記録する数 
+set history=100                 "コロンコマンドを記録する数
 set fileformats=unix,dos,mac    "改行コード識別
 "編集中の内容を保ったまま別の画面に切替えられるようにする
-set hid	
+set hid
 "外部のエディタで編集中のファイルが変更されたら自動で読み直す
-set autoread                    
+set autoread
 
 "syntax enable
 set background=dark
@@ -89,11 +113,10 @@ let g:color_name = "ChocolateLiquor"
 "----------------------------------------------------
 set ignorecase        "検索文字列が小文字の場合は大文字小文字を区別しない
 set smartcase         "検索文字列に大文字が含まれている場合は区別して検索する
-set wrapscan          "検索時に最後まで行ったら最初に戻る 
+set wrapscan          "検索時に最後まで行ったら最初に戻る
 set noincsearch       "検索文字列入力時に順次対象文字列にヒットしない
 "Esc連打で検索時にハイライトを消す
-nmap <Esc><Esc> :nohlsearch<CR><Esc>    
-
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 "----------------------------------------------------
 "装飾関連
@@ -120,7 +143,7 @@ endif
 "----------------------------------------------------
 "編集、文書整形関連
 "----------------------------------------------------
-set backspace=indent,eol,start    
+set backspace=indent,eol,start
 set autoindent              "自動的にインデントする
 "set smartindent            "インデントはスマートインデント(賢いインデント)
 set tabstop=4               "タブ幅
