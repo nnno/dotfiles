@@ -61,32 +61,6 @@ let Tlist_Exit_OnlyWindow  = 1
 " \lでtaglistの開閉
 map <silent> <leader>l :TlistToggle<CR>
 
-"NeoBundle 'Shougo/neobundle.vim'
-"NeoBundle 'Shougo/neocomplcache'
-"NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'ujihisa/unite-locate'
-"NeoBundle 'taglist.vim'
-"NeoBundle 'The-NERD-tree'
-"NeoBundle 'The-NERD-Commenter'
-"NeoBundle 'fugitive.vim'
-"NeoBundle 'thinca/vim-quickrun'
-"NeoBundle 'thinca/vim-localrc'
-"NeoBundle 'dbext.vim'
-"NeoBundle 'mattn/webapi-vim'
-"NeoBundle 'mattn/unite-advent_calendar'
-"NeoBundle 'open-browser.vim'
-"NeoBundle 'ctrlp.vim'
-"NeoBundle 'altercation/vim-colors-solarized'  "Color Scheme
-"NeoBundle 'yanktmp.vim'
-"call neobundle#end()
-"filetype plugin indent on
-"
-"" If there are uninstalled bundles found on startup,
-"" this will conveniently prompt you to install them.
-"NeoBundleCheck
-"
-"set nocompatible
-
 "----------------------------------------------------
 " エンコード
 "----------------------------------------------------
@@ -261,26 +235,27 @@ function InsertTabWrapper()
   endif
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
 "----------------------------------------------------
 "Nginx
 "----------------------------------------------------
 au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
 "----------------------------------------------------
-" PDV (PhpDocumenter for vim)
-"----------------------------------------------------
-inoremap <C-@> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-@> :call PhpDocSingle()<CR>
-vnoremap <C-@> :call PhpDocRange()<CR> 
-"----------------------------------------------------
-" yanktmp
-"----------------------------------------------------
-map <silent> sy :call YanktmpYank()<CR>
-map <silent> sp :call YanktmpPaste_p()<CR>
-map <silent> sP :call YanktmpPaste_P()<CR>
-
-"----------------------------------------------------
 " NRDTree
 "----------------------------------------------------
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+"----------------------------------------------------
+" 貼り付け時にペーストバッファを上書きしない
+"----------------------------------------------------
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
 
