@@ -4,7 +4,7 @@
 
 # tap
 # -----------------------------------------------------------------------------
-tap 'caskroom/homebrew-cask'
+tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/binary'
 tap 'homebrew/bundle'
@@ -15,8 +15,6 @@ tap 'peco/peco'
 
 # cask
 # -----------------------------------------------------------------------------
-brew 'brew-cask'
-
 cask 'atom'
 cask 'alfred'
 cask 'appcleaner'
@@ -36,6 +34,7 @@ cask 'skype'
 cask 'virtualbox'
 cask 'vagrant'
 cask 'vlc'
+cask 'mysqlworkbench'
 
 # ethers
 # -----------------------------------------------------------------------------
@@ -59,13 +58,12 @@ brew 'node'
 brew 'openssl'
 brew 'p7zip'
 brew 'peco'
-brew 'php56'
-brew 'php56-apcu'
-brew 'php56-igbinary'
-brew 'php56-intl'
-brew 'php56-mcrypt'
-brew 'php56-memcached'
-brew 'php56-opcache'
+brew 'php70'
+brew 'php70-apcu'
+brew 'php70-intl'
+brew 'php70-mcrypt'
+brew 'php70-memcached'
+brew 'php70-opcache'
 brew 'pkg-config'
 brew 'protobuf'
 brew 'python'
