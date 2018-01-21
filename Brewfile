@@ -35,6 +35,7 @@ cask 'virtualbox'
 cask 'vagrant'
 cask 'vlc'
 cask 'mysqlworkbench'
+cask 'insomnia'
 
 # ethers
 # -----------------------------------------------------------------------------
@@ -67,6 +68,7 @@ brew 'php70-opcache'
 brew 'pkg-config'
 brew 'protobuf'
 brew 'python'
+brew 'python3'
 brew 'readline'
 brew 'reattach-to-user-namespace'
 brew 'sbt'
