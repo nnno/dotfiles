@@ -6,6 +6,7 @@
 # -----------------------------------------------------------------------------
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
+tap 'caskroom/versions'
 tap 'homebrew/binary'
 tap 'homebrew/bundle'
 tap 'homebrew/dupes'
@@ -20,7 +21,8 @@ cask 'appcleaner'
 cask 'dropbox'
 cask 'evernote'
 cask 'firefox'
-cask 'java'
+cask 'java'             # java10
+cask 'java8'            # java8
 cask 'google-chrome'
 cask 'osxfuse'
 cask 'xquartz'
