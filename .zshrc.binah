@@ -16,3 +16,6 @@ PATH=${JAVA_HOME}/bin:${PATH}
 # node.js
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# mysql
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+

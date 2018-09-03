@@ -75,3 +75,6 @@ brew 'xz'
 brew 'zlib'
 brew 'zsh', args: ['enable-etcdir']
 brew 'vim', args: ['with-override-system-vi']
+brew 'mysql@5.7'
+brew 'memcached'
+
