@@ -1,40 +1,34 @@
 # ~/.zshrc.Metatron
 
-export PATH="/usr/local/sbin:$PATH"
-export PATH=$HOME/bin:`brew --prefix`/bin:$PATH
+# Enable powerline
+source ~/.zshrc.powerline
 
-# for PHP56
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-
-# for RVM
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-# for Android SDK
-export PATH="/Applications/adt-bundle-mac-x86_64/sdk/tools:/Applications/adt-bundle-mac-x86_64/sdk/platform-tools:$PATH"
-
-# Scala
-export SCALA_HOME=$HOME/bin/scala-2.10.1
-export PATH=$PATH:$SCALA_HOME/bin
-
-# nvm, node.js
-[ -s "/Users/nnno/.nvm/nvm.sh" ] && . "/Users/nnno/.nvm/nvm.sh" # This loads nvm
-nvm use v0.10.26
-if [ -d ${HOME}/node_modules/.bin ]; then
-  export PATH=${PATH}:${HOME}/node_modules/.bin
-fi
-
-# Google go
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
-launchctl setenv GOROOT /usr/local/opt/go/libexec
-launchctl setenv GOPATH $HOME/go
-
-# composer
-export PATH=$PATH:$HOME/.composer/vendor/bin
+########################################
+# PATH settings 
+########################################
+# PATH
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:`brew --prefix`/bin:$PATH"
 
 # peco
 source $HOME/.zshrc.peco
 
+# Python (using brew installed.)
+export PATH="/usr/local/bin:/usr/local/share/python:$PATH"
+
+# Go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+# Java
+export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
+PATH=${JAVA_HOME}/bin:${PATH}
+
+# node.js
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# mysql
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
 # for tmux
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
