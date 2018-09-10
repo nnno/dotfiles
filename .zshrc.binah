@@ -1,5 +1,12 @@
-# ~/.zshrc.Sandalphon
+# ~/.zshrc.binah
 
+# Enable powerline
+source ~/.zshrc.powerline
+
+########################################
+# PATH settings 
+########################################
+# PATH
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 export PATH="$HOME/bin:`brew --prefix`/bin:$PATH"
 
@@ -8,6 +15,9 @@ source $HOME/.zshrc.peco
 
 # Python (using brew installed.)
 export PATH="/usr/local/bin:/usr/local/share/python:$PATH"
+
+# Go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # Java
 export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
@@ -18,4 +28,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # mysql
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# for tmux
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
