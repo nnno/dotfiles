@@ -12,6 +12,9 @@ tap 'homebrew/bundle'
 tap 'homebrew/dupes'
 tap 'homebrew/php'
 tap 'homebrew/fuse'
+# for QMKFirmware
+tap 'osx-cross/avr'
+tap 'PX4/homebrew-px4'
 
 # cask
 # -----------------------------------------------------------------------------
@@ -32,7 +35,7 @@ cask 'font-source-code-pro'
 cask 'font-source-code-pro-for-powerline'
 cask 'skype'
 cask 'vlc'
-cask 'insomnia'
+cask 'android-studio'
 
 # ethers
 # -----------------------------------------------------------------------------
@@ -78,4 +81,12 @@ brew 'vim', args: ['with-override-system-vi']
 brew 'mysql@5.7'
 brew 'memcached'
 brew 'tig'
+
+# for QMKFirmware
+brew 'avr-gcc@7'
+brew 'dfu-programmer'
+brew 'dfu-util'
+brew 'gcc-arm-none-eabi'
+brew 'avrdude'
+
 
