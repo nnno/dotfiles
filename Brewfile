@@ -18,7 +18,6 @@ tap 'PX4/homebrew-px4'
 
 # cask
 # -----------------------------------------------------------------------------
-cask 'atom'
 cask 'alfred'
 cask 'appcleaner'
 cask 'dropbox'
@@ -69,7 +68,6 @@ brew 'reattach-to-user-namespace'
 brew 'sbt'
 brew 'scala'
 brew 'sshfs'
-brew 'terminal-notifier'
 brew 'the_platinum_searcher'
 brew 'tmux'
 brew 'unixodbc'
