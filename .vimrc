@@ -22,13 +22,19 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug', {'dir': '~/.vim/plugged/vim-plug/autoload'}
-Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf'
+Plug 'itchyny/lightline.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'vim-scripts/taglist.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'terryma/vim-expand-region'
-Plug 'airblade/vim-gitgutter'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
