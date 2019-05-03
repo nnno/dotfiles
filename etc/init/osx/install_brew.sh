@@ -7,4 +7,3 @@ fi
 brew tap Homebrew/bundle
 brew bundle cleanup
 brew bundle
-brew linkapps
