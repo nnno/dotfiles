@@ -18,8 +18,8 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH="/usr/local/bin:/usr/local/share/python:$PATH"
 
 # Go
-export GOPATH=$HOME/work/go
-export PATH="$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin"
+#export GOPATH=$HOME/work/go
+#export PATH="$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin"
 
 # Java
 export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home -v "1.8"`
@@ -34,3 +34,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/nnno/.nodebrew/node/v8.11.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/nnno/.nodebrew/node/v8.11.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# anaconda3
+export PATH=$HOME/hogehoge/bin:$PATH
+
