@@ -38,9 +38,6 @@ homebrew:
 brew: homebrew
 	@-bash $(DOTFILES_DIR)/etc/init/osx/install_brew.sh
 
-atom:
-	@-bash $(DOTFILES_DIR)/etc/init/osx/init_atom.sh
-
 endif
 
 install: update deploy init

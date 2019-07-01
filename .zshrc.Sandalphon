@@ -3,13 +3,17 @@
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 export PATH="$HOME/bin:`brew --prefix`/bin:$PATH"
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.zshrc.fzf
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
 # php
 export PATH="/usr/local/opt/php@7.0/bin:$PATH"
 # composer
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
-# peco
-source $HOME/.zshrc.peco
 # Python (using brew installed.)
 export PATH="/usr/local/bin:/usr/local/share/python:$PATH"
 
