@@ -78,10 +78,9 @@ brew 'memcached'
 brew 'tig'
 
 # for QMKFirmware
-brew 'avr-gcc@7'
+brew 'avr-gcc@8'
 brew 'dfu-programmer'
 brew 'dfu-util'
 brew 'gcc-arm-none-eabi'
 brew 'avrdude'
-
 
