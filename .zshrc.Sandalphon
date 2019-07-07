@@ -38,3 +38,5 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # anaconda3
 export PATH=$HOME/hogehoge/bin:$PATH
 
+export PATH="/usr/local/opt/avr-gcc@8/bin:$PATH"
+
