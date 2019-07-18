@@ -1,9 +1,11 @@
 # ~/.zshrc
 
+
 ########################################
 # Load zsh plugins (zplug)
 ########################################
-source ~/.zplug/zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 zplug "chrissicool/zsh-256color", of:"zsh-256color.plugin.zsh"
 zplug "zsh-users/zsh-completions"
