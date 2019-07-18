@@ -76,6 +76,7 @@ brew 'vim', args: ['with-override-system-vi']
 brew 'mysql@5.7'
 brew 'memcached'
 brew 'tig'
+brew 'rbenv'
 
 # for QMKFirmware
 brew 'avr-gcc@8'
