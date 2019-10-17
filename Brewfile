@@ -45,7 +45,7 @@ brew 'gdbm'
 brew 'gettext'
 brew 'git'
 brew 'glib'
-brew 'goenv'
+brew 'goenv', args: ['HEAD']
 brew 'jq'
 brew 'macvim'
 brew 'mecab'
