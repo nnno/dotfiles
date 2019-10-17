@@ -15,8 +15,11 @@ export PATH="/usr/local/bin:/usr/local/share/python:$PATH"
 # node.js
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# mysql
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
 # rbenv (ruby)
-export PATH="/Users/nnno/.rbenv/shims:${PATH}"
+export PATH="/Users/yusuke.unno/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
 source '/usr/local/Cellar/rbenv/1.1.2/libexec/../completions/rbenv.zsh'
 command rbenv rehash 2>/dev/null
@@ -34,3 +37,11 @@ rbenv() {
     command rbenv "$command" "$@";;
   esac
 }
+
+# goenv, go
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
+
