@@ -5,7 +5,18 @@
 # Load zsh plugins (zplug)
 ########################################
 export ZPLUG_HOME=/usr/local/opt/zplug
+if [[ ! -d $ZPLUG_HOME ]];then
+  export ZPLUG_HOME=~/.zplug
+fi
+# zplugが無ければgitからclone
+if [[ ! -d $ZPLUG_HOME ]];then
+  git clone https://github.com/zplug/zplug ~/.zplug
+fi
+
 source $ZPLUG_HOME/init.zsh
+
+# 自分自身をプラグインとして管理
+zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 zplug "chrissicool/zsh-256color", of:"zsh-256color.plugin.zsh"
 zplug "zsh-users/zsh-completions"
