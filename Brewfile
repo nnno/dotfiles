@@ -27,6 +27,7 @@ cask 'the-unarchiver'
 cask 'skype'
 cask 'vlc'
 cask 'android-studio'
+cask 'visual-studio-code'
 
 # ethers
 # -----------------------------------------------------------------------------
