@@ -4,9 +4,9 @@
 
 # tap
 # -----------------------------------------------------------------------------
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 # for QMKFirmware
 tap 'osx-cross/avr'
@@ -28,6 +28,7 @@ cask 'skype'
 cask 'vlc'
 cask 'android-studio'
 cask 'visual-studio-code'
+cask 'arduino'
 
 # ethers
 # -----------------------------------------------------------------------------
@@ -61,9 +62,11 @@ brew 'the_platinum_searcher'
 brew 'tmux'
 brew 'wget'
 brew 'zlib'
-brew 'zsh', args: ['enable-etcdir']
+#brew 'zsh', args: ['enable-etcdir']
+brew 'zsh' 
 brew 'zplug'
-brew 'vim', args: ['with-override-system-vi']
+#brew 'vim', args: ['with-override-system-vi']
+brew 'vim'
 brew 'mysql@5.7'
 brew 'memcached'
 brew 'tig'
