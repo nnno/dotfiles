@@ -18,7 +18,7 @@ source $ZPLUG_HOME/init.zsh
 # 自分自身をプラグインとして管理
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
-zplug "chrissicool/zsh-256color", of:"zsh-256color.plugin.zsh"
+zplug "chrissicool/zsh-256color"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 
@@ -30,7 +30,7 @@ zplug "mollifier/anyframe"
 zplug "mollifier/cd-gitroot"
 
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "zsh-users/zsh-syntax-highlighting"
 
 # Install zsh plugin via zplug.
 if ! zplug check --verbose; then
@@ -40,7 +40,7 @@ if ! zplug check --verbose; then
   fi
 fi
 
-zplug load --verbose
+zplug load
 
 ########################################
 # Load configuration files.
