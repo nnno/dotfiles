@@ -58,4 +58,3 @@ load_local_config () {
     [ -f $HOME/.zshrc.test ] && source $HOME/.zshrc.test
 }
 load_local_config
-
