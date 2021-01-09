@@ -48,3 +48,11 @@ export PATH="$GOPATH/bin:$PATH"
 
 # flutter
 export PATH="$PATH:`pwd`/flutter/bin"
+
+# pyenv
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+	export PATH=${PYENV_ROOT}/bin:$PATH
+  eval "$(pyenv init -)"
+fi
+
