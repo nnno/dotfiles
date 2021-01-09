@@ -1,27 +1,5 @@
-#color mapping
-#_color_map=(${_color_map[*]} 0)   # black
-_color_map=(${_color_map[*]} 1)   # red
-_color_map=(${_color_map[*]} 2)   # green
-_color_map=(${_color_map[*]} 3)   # yellow
-_color_map=(${_color_map[*]} 4)   # blue
-_color_map=(${_color_map[*]} 5)   # magenta
-_color_map=(${_color_map[*]} 6)   # cyan
-_color_map=(${_color_map[*]} 7)   # white
-
-# attribute mapping
-_attr_map=(${_attr_map[*]} 0)     # normal
-_attr_map=(${_attr_map[*]} 1)     # bold
-_attr_map=(${_attr_map[*]} 4)     # under_score
-#_attr_map=(${_attr_map[*]} 7)     # reverse
-
-# Coloring hostname and username
-_cl_host_index=$(/usr/bin/python -c 'print hash("'$HOSTNAME'") % '${#_color_map[*]}'')
-_cl_user_index=$(/usr/bin/python -c 'print hash("'$USER'") % '${#_color_map[*]}'')
-_attr_host_index=$(/usr/bin/python -c 'print hash("'$HOSTNAME'") % '${#_attr_map[*]}'')
-_attr_user_index=$(/usr/bin/python -c 'print hash("'$USER'") % '${#_attr_map[*]}'')
-
-_colored_host=$(echo -e "%{\e[${_attr_map[${_attr_host_index}]};3${_color_map[${_cl_host_index}]}m%}%m%{\e[m%}")
-_colored_user=$(echo -e "%{\e[${_attr_map[${_attr_user_index}]};3${_color_map[${_cl_user_index}]}m%}%n%{\e[m%}")
+_colored_user="%{${fg[green]}%}%n%{${reset_color}%}"
+_colored_host="%{${fg[white]}%}%m%{${reset_color}%}"
 
 # prompt setting
 PROMPT="[${_colored_user}@${_colored_host} %~]%# "
