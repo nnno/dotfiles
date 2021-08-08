@@ -11,6 +11,7 @@ tap 'homebrew/bundle'
 # for QMKFirmware
 tap 'osx-cross/avr'
 tap 'PX4/homebrew-px4'
+tap 'coursier/formulas'
 
 # cask
 # -----------------------------------------------------------------------------
@@ -30,7 +31,7 @@ cask 'android-studio'
 cask 'visual-studio-code'
 cask 'arduino'
 
-# ethers
+# others
 # -----------------------------------------------------------------------------
 brew 'awscli'
 brew 'cdrtools'
@@ -41,36 +42,33 @@ brew 'gdbm'
 brew 'gettext'
 brew 'git'
 brew 'glib'
-brew 'goenv', args: ['HEAD']
+brew 'anyenv'
 brew 'jq'
-#brew 'macvim'
 brew 'mecab'
 brew 'mecab-ipadic'
-brew 'nodebrew'
 brew 'openssl'
 brew 'p7zip'
 brew 'fzf'
 brew 'ripgrep'
 brew 'pkg-config'
 brew 'protobuf'
-brew 'python'
-brew 'python3'
+#brew 'python'
+#brew 'python3'
 brew 'readline'
+brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'sshfs'
 brew 'the_platinum_searcher'
-brew 'tmux'
 brew 'wget'
 brew 'zlib'
-#brew 'zsh', args: ['enable-etcdir']
 brew 'zsh' 
 brew 'zplug'
-#brew 'vim', args: ['with-override-system-vi']
 brew 'vim'
-brew 'mysql@5.7'
-brew 'memcached'
+#brew 'mysql@5.7'
+#brew 'memcached'
 brew 'tig'
-brew 'rbenv'
+# scala
+brew 'coursier/formulas/coursier'
 
 # for QMKFirmware
 brew 'avr-gcc@8'
@@ -79,3 +77,7 @@ brew 'dfu-util'
 brew 'gcc-arm-none-eabi'
 brew 'avrdude'
 
+brew 'exa'
+brew 'bat'
+brew 'fd'
+brew 'ripgrep'
