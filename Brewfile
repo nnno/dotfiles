@@ -32,6 +32,7 @@ cask 'font-fira-code'
 
 # others
 # -----------------------------------------------------------------------------
+brew 'visual-studio-code'
 brew 'awscli'
 brew 'cdrtools'
 brew 'coreutils'
