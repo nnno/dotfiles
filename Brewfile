@@ -12,7 +12,6 @@ tap 'homebrew/bundle'
 tap 'osx-cross/avr'
 tap 'PX4/homebrew-px4'
 tap 'coursier/formulas'
-tap 'caskroom/fonts'
 
 # cask
 # -----------------------------------------------------------------------------
@@ -28,11 +27,12 @@ cask 'android-studio'
 cask 'visual-studio-code'
 cask 'arduino'
 cask 'font-fira-code'
-case 'macfuse'
+cask 'macfuse'
+cask 'warp'
 
 # others
 # -----------------------------------------------------------------------------
-brew 'visual-studio-code'
+# brew 'visual-studio-code'
 brew 'awscli'
 # brew 'cdrtools'
 brew 'coreutils'
@@ -59,6 +59,7 @@ brew 'zsh'
 brew 'zplug'
 brew 'vim'
 brew 'tig'
+brew 'gh'
 
 # for QMKFirmware
 brew 'avr-gcc@8'
