@@ -28,7 +28,7 @@ cask 'visual-studio-code'
 cask 'arduino'
 cask 'font-fira-code'
 cask 'macfuse'
-cask 'warp'
+cask 'bitwarden'
 
 # others
 # -----------------------------------------------------------------------------
