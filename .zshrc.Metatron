@@ -1,7 +1,6 @@
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
-if type brew > /dev/null; then
-  export PATH="$HOME/bin:`brew --prefix`/bin:$PATH"
-fi
+export PATH=$HOME/.homebrew/bin:$PATH
+export HOMEBREW_CACHE=$HOME/.homebrew/caches
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
