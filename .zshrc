@@ -58,3 +58,7 @@ load_local_config () {
     [ -f $HOME/.zshrc.test ] && source $HOME/.zshrc.test
 }
 load_local_config
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/nnno/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
