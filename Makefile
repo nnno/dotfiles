@@ -19,7 +19,7 @@ list:
 	@$(foreach val, $(DOTFILES_FILES), ls -dF $(val);)
 
 update:
-	git pull origin master
+	git pull origin main
 	git submodule init
 	git submodule update
 
