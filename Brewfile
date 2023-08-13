@@ -17,7 +17,7 @@ tap 'coursier/formulas'
 # -----------------------------------------------------------------------------
 cask 'bitwarden'
 cask 'google-chrome'
-cask 'alfred'
+cask 'raycast'
 cask 'appcleaner'
 cask 'dropbox'
 cask 'evernote'
