@@ -47,8 +47,3 @@ apply = ["source"]
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 use = ["{{ name }}.zsh"]
-
-[plugins.dotfiles-sync]
-local = "$HOME/work/dotfiles/zsh"
-use = ["sync.zsh"]
-apply = ["source"]

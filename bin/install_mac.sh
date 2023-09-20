@@ -72,7 +72,7 @@ SCRIPT_DIR="$(cd "$(dirname "$1")" && pwd)"
 if [ ! -d "$HOME"/.config/sheldon ]; then
   mkdir -p "$HOME"/.config/sheldon
 fi
-ln -fnsv "$SCRIPT_DIR"/zsh/sheldon.plugins.toml "$HOME"/.config/sheldon/plugins.toml
+ln -fnsv "$SCRIPT_DIR"/zsh/plugins.toml "$HOME"/.config/sheldon/plugins.toml
 
 # ============================================================
 # brew
