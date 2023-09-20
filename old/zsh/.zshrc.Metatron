@@ -1,0 +1,10 @@
+
+# flutter
+export PATH="$PATH:$HOME/work/flutter/bin"
+
+# anyenv
+# export PATH="$HOME/.anyenv/bin:$PATH"
+# eval "$(anyenv init -)"
+
+
+. /Users/nnno/.homebrew/opt/asdf/libexec/asdf.sh

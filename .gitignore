@@ -1,4 +1,4 @@
-.vim/bundle
-.vim/*
+dotfiles/.vim/bundle
+dotfiles/.vim/*
 .idea
 
