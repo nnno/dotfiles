@@ -23,7 +23,6 @@ if [ -d "$HOME/.rd/bin" ] ; then
   export PATH="$HOME/.rd/bin:$PATH"
 fi
 
-
 export EDITOR='vim'
 
 setopt auto_pushd                               # cd時にディレクトリスタックに積む
@@ -40,10 +39,14 @@ export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
 
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt share_history        # share command history data
-setopt extended_history     # 履歴ファイルに時刻を記録
-setopt append_history       # 上書きではなく追加する
-setopt hist_ignore_all_dups # 重複したヒストリは追加しない
-setopt hist_verify          # ヒストリを呼び出してから実行する間に一旦編集できる状態になる
-setopt no_list_types        # auto_list の補完候補一覧で、ls -F のようにファイルの種別をマーク表示しない
+setopt extended_history                         # ヒストリに実行時間も保存する
+setopt hist_ignore_dups                         # 直前と同じコマンドはヒストリに追加しない
+setopt share_history                            # 他のシェルのヒストリをリアルタイムで共有する
+setopt hist_reduce_blanks                       # 余分なスペースを削除してヒストリに保存する
+
+# マッチしたコマンドのヒストリを表示できるようにする
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
