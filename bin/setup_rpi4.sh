@@ -24,7 +24,7 @@ symlink "$SCRIPT_DIR"/dotfiles
 # zsh, sheldon, peco
 # ============================================================
 # install sheldon (from Pre-built binaries)
-if [ ! -e "$HOME"/.local/bin/shelcon ]; then
+if [ ! -e "$HOME"/.local/bin/sheldon ]; then
   curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
     | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
 else
