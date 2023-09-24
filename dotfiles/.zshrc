@@ -1,5 +1,5 @@
 # path
-export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:$PATH"
 
 # homebrew
 export PATH=$HOME/.homebrew/bin:$PATH
@@ -52,5 +52,7 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # golang
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$GOPATH/bin
+if type "go version" > /dev/null 2>&1; then
+  export GOPATH=$(go env GOPATH)
+  export PATH=$PATH:$GOPATH/bin
+fi
