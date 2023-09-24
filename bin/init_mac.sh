@@ -39,4 +39,5 @@ git config --global ghq.root "$HOME"/src
 
 ghq get nnno/dotfiles
 
-echo 'end of script. please run ~/src/github.com/nnno/dotfiles/bin/install_mac.sh'
+echo "end of script."
+echo "please run ~/src/github.com/nnno/dotfiles/bin/setup_mac.sh"
