@@ -29,7 +29,7 @@ chsh -s /bin/zsh
 export PATH=$HOME/.homebrew/bin:$PATH
 export HOMEBREW_CACHE=$HOME/.homebrew/caches
 
-brew install git ghq
+brew install git ghq peco
 
 if [ ! -d "$HOME"/src ]; then
   mkdir "$HOME"/src

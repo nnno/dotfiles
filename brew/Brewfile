@@ -1,0 +1,33 @@
+# Brewfile
+# -----------------------------------------------------------------------------
+
+# tap
+# -----------------------------------------------------------------------------
+tap "coursier/formulas"
+tap "homebrew/bundle"
+tap "homebrew/services"
+
+# libraries + Utils
+# -----------------------------------------------------------------------------
+brew "wget"
+brew "freetype"
+brew "pt"                                   # the platinum searcher
+
+# zsh + tools
+# -----------------------------------------------------------------------------
+brew "zsh"
+brew "sheldon"
+brew "peco"
+brew "ghq"
+brew "git"
+brew "vim"
+brew "tig"
+
+# for development
+# -----------------------------------------------------------------------------
+brew "asdf"
+
+# yabai + skhd (tiling window manager)
+# -----------------------------------------------------------------------------
+brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/skhd"
