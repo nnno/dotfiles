@@ -52,7 +52,7 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # golang
-if type "go version" > /dev/null 2>&1; then
+if type go &>/dev/null; then
   export GOPATH=$(go env GOPATH)
   export PATH=$PATH:$GOPATH/bin
 fi

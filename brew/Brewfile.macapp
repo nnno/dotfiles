@@ -15,11 +15,9 @@ cask 'dropbox'
 cask 'evernote'
 cask 'font-fira-code'
 cask 'google-chrome'
-cask 'macfuse'
 cask 'slack'
 cask 'the-unarchiver'
 cask 'visual-studio-code'
-cask 'xquartz'
 
 # mas - mac app store application.
 # -----------------------------------------------------------------------------
