@@ -1,4 +1,5 @@
-.vim/bundle
-.vim/*
+dotfiles/.vim/bundle
+dotfiles/.vim/*
+brew/*.json
 .idea
 
