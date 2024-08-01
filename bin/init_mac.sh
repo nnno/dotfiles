@@ -25,11 +25,12 @@ fi
 # Change shell to zsh
 chsh -s /bin/zsh
 
-# gitとghqをインストールし、dotfilesを取得する
+# gitはmacosデフォルトのものを使う (以前はhomebrew版を使っていたが、homebrewの非標準のパスをサポートしなくなったため)
+# ghq, pecoをインストール、dotfilesを取得する
 export PATH=$HOME/.homebrew/bin:$PATH
 export HOMEBREW_CACHE=$HOME/.homebrew/caches
 
-brew install git ghq peco
+brew install ghq peco
 
 if [ ! -d "$HOME"/src ]; then
   mkdir "$HOME"/src
