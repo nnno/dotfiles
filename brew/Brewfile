@@ -19,7 +19,7 @@ brew "zsh"
 brew "sheldon"
 brew "peco"
 brew "ghq"
-brew "git"
+# brew "git"
 brew "vim"
 brew "tig"
 
@@ -31,3 +31,7 @@ brew "asdf"
 # -----------------------------------------------------------------------------
 brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
+
+# keyboard configuration tools
+# -----------------------------------------------------------------------------
+# brew "qmk-toolbox"

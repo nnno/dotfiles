@@ -53,7 +53,9 @@ ln -fnsv "$SCRIPT_DIR"/zsh/plugins.toml "$HOME"/.config/sheldon/plugins.toml
 # ============================================================
 # brew
 # ============================================================
-# export PATH=$HOME/.homebrew/bin:$PATH
-# export HOMEBREW_CACHE=$HOME/.homebrew/caches
+export PATH=$HOME/.homebrew/bin:$PATH
+export HOMEBREW_CACHE=$HOME/.homebrew/caches
 
 # brew bundle --global
+echo "brew bundle --file ./brew/Brewfile"
+echo "brew bundle --file ./brew/Brewfile.macapp"

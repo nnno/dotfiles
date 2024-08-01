@@ -2,7 +2,7 @@
 export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:$PATH"
 
 # homebrew
-export PATH=$HOME/.homebrew/bin:$PATH
+export PATH=$HOME/.homebrew/sbin:$HOME/.homebrew/bin:$PATH
 export HOMEBREW_CACHE=$HOME/.homebrew/caches
 
 # sheldon
@@ -16,6 +16,7 @@ fi
 # asdf
 if [ -d "$HOME/.homebrew/opt/asdf" ] ; then
   . "$HOME"/.homebrew/opt/asdf/libexec/asdf.sh
+  export PATH=$HOME/.asdf/shims:$PATH
 fi
 
 # Rancher Desktop

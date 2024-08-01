@@ -1,6 +1,6 @@
 # tap
 # -----------------------------------------------------------------------------
-tap 'homebrew/cask'
+# tap 'homebrew/cask'
 tap "homebrew/cask-fonts"
 
 # cask - mac application.
@@ -8,11 +8,10 @@ tap "homebrew/cask-fonts"
 cask "macfuse"
 cask "raycast"
 cask "xquartz"
-cask 'android-studio'
+# cask 'android-studio'
 cask 'appcleaner'
-cask 'arduino'
+# cask 'arduino'
 cask 'dropbox'
-cask 'evernote'
 cask 'font-fira-code'
 cask 'google-chrome'
 cask 'slack'
@@ -25,4 +24,4 @@ mas "Bitwarden", id: 1352778147
 mas "Display Menu", id: 549083868
 mas "LINE", id: 539883307
 mas "UpNote", id: 1398373917
-mas "Vimari", id: 1480933944
+mas "Sequel Ace", id: 1518036000
