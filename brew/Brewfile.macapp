@@ -1,17 +1,14 @@
 # tap
 # -----------------------------------------------------------------------------
 # tap 'homebrew/cask'
-tap "homebrew/cask-fonts"
+# tap "homebrew/cask-fonts"
 
 # cask - mac application.
 # -----------------------------------------------------------------------------
 cask "macfuse"
 cask "raycast"
 cask "xquartz"
-# cask 'android-studio'
 cask 'appcleaner'
-# cask 'arduino'
-cask 'dropbox'
 cask 'font-fira-code'
 cask 'google-chrome'
 cask 'slack'

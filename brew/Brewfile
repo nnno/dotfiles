@@ -19,9 +19,9 @@ brew "zsh"
 brew "sheldon"
 brew "peco"
 brew "ghq"
-# brew "git"
 brew "vim"
 brew "tig"
+cask "font-jetbrains-mono"
 
 # for development
 # -----------------------------------------------------------------------------
@@ -35,3 +35,4 @@ brew "koekeishiya/formulae/skhd"
 # keyboard configuration tools
 # -----------------------------------------------------------------------------
 # brew "qmk-toolbox"
+
