@@ -7,32 +7,22 @@ tap "coursier/formulas"
 tap "homebrew/bundle"
 tap "homebrew/services"
 
-# libraries + Utils
-# -----------------------------------------------------------------------------
-brew "wget"
-brew "freetype"
-brew "pt"                                   # the platinum searcher
-
-# zsh + tools
-# -----------------------------------------------------------------------------
-brew "zsh"
-brew "sheldon"
-brew "peco"
-brew "ghq"
-brew "vim"
-brew "tig"
-cask "font-jetbrains-mono"
-
-# for development
+#
 # -----------------------------------------------------------------------------
 brew "asdf"
+brew "freetype"
+brew "ghq"
+brew "peco"
+brew "pt"                                   # the platinum searcher
+brew "sheldon"
+brew "tig"
+brew "vim"
+brew "wget"
+brew "xh"
+brew "zsh"
+cask "font-jetbrains-mono"
 
 # yabai + skhd (tiling window manager)
 # -----------------------------------------------------------------------------
 brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
-
-# keyboard configuration tools
-# -----------------------------------------------------------------------------
-# brew "qmk-toolbox"
-

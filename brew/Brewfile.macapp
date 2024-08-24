@@ -9,7 +9,6 @@ cask "macfuse"
 cask "raycast"
 cask "xquartz"
 cask 'appcleaner'
-cask 'font-fira-code'
 cask 'google-chrome'
 cask 'slack'
 cask 'the-unarchiver'

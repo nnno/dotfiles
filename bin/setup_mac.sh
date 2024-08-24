@@ -56,5 +56,26 @@ ln -fnsv "$SCRIPT_DIR"/zsh/plugins.toml "$HOME"/.config/sheldon/plugins.toml
 export PATH=$HOME/.homebrew/bin:$PATH
 export HOMEBREW_CACHE=$HOME/.homebrew/caches
 
-echo "brew bundle --file ./brew/Brewfile"
+brew bundle --file ./brew/Brewfile
+
+# ============================================================
+# development tools via asdf
+# ============================================================
+if type asdf &>/dev/null; then
+  echo "asdf ready!"
+  # install jq
+  asdf plugin add jq
+  asdf install jq latest
+  asdf global jq latest
+  # install AWS CLI
+  asdf plugin add awscli
+  asdf install awscli latest:2
+  asdf global awscli latest
+  # install terraform
+  asdf plugin add terraform
+  asdf install terraform latest
+  asdf global terraform latest
+fi
+
+echo "========================================"
 echo "brew bundle --file ./brew/Brewfile.macapp"
