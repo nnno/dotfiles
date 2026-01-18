@@ -1,0 +1,9 @@
+[tools]
+awscli = "latest"
+go = "latest"
+jq = "latest"
+node = "22"
+ruff = "latest"
+uv = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@openai/codex" = "latest"

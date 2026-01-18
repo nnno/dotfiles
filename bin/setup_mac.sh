@@ -6,6 +6,9 @@ if [[ $OSTYPE != darwin* ]]; then
     exit
 fi
 
+SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+source "$SCRIPT_DIR"/bin/lib/common.sh
+
 # ============================================================
 # defaults settings for mac
 # ============================================================
@@ -22,33 +25,18 @@ defaults write com.apple.screencapture name ss
 # ============================================================
 # symlink
 # ============================================================
-
-function symlink() {
-  DIR=$1
-  for dotfile in "${DIR}"/.??* ; do
-    [[ "$dotfile" == "${DIR}/.git" ]] && continue
-    [[ "$dotfile" == "${DIR}/.github" ]] && continue
-    [[ "$dotfile" == "${DIR}/.DS_Store" ]] && continue
-    [[ "$dotfile" == "${DIR}/.idea" ]] && continue
-    [[ "$dotfile" == "${DIR}/." ]] && continue
-
-    ln -fnsv "$dotfile" "$HOME"
-  done
-}
-
-SCRIPT_DIR="$(cd "$(dirname "$1")" && pwd)"
 symlink "$SCRIPT_DIR"/dotfiles
 
 # ============================================================
 # zsh + sheldon
 # ============================================================
+setup_sheldon "$SCRIPT_DIR"
 
-SCRIPT_DIR="$(cd "$(dirname "$1")" && pwd)"
-
-if [ ! -d "$HOME"/.config/sheldon ]; then
-  mkdir -p "$HOME"/.config/sheldon
+# mise
+if [ ! -d "$HOME"/.config/mise ]; then
+  mkdir -p "$HOME"/.config/mise
 fi
-ln -fnsv "$SCRIPT_DIR"/zsh/plugins.toml "$HOME"/.config/sheldon/plugins.toml
+ln -fnsv "$SCRIPT_DIR"/mise/config.toml "$HOME"/.config/mise/config.toml
 
 # ============================================================
 # brew
@@ -59,22 +47,10 @@ export HOMEBREW_CACHE=$HOME/.homebrew/caches
 brew bundle --file ./brew/Brewfile
 
 # ============================================================
-# development tools via asdf
+# development tools via mise
 # ============================================================
-if type asdf &>/dev/null; then
-  echo "asdf ready!"
-  # install jq
-  asdf plugin add jq
-  asdf install jq latest
-  asdf global jq latest
-  # install AWS CLI
-  asdf plugin add awscli
-  asdf install awscli latest:2
-  asdf global awscli latest
-  # install terraform
-  asdf plugin add terraform
-  asdf install terraform latest
-  asdf global terraform latest
+if type mise &>/dev/null; then
+  mise install
 fi
 
 echo "========================================"

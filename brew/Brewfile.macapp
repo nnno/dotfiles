@@ -18,6 +18,3 @@ cask 'visual-studio-code'
 # -----------------------------------------------------------------------------
 mas "Bitwarden", id: 1352778147
 mas "Display Menu", id: 549083868
-mas "LINE", id: 539883307
-mas "UpNote", id: 1398373917
-mas "Sequel Ace", id: 1518036000

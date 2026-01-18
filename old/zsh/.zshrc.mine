@@ -1,5 +1,0 @@
-# ~/.zshrc.mine
-
-WATCH=notme
-export EDITOR="vim"
-

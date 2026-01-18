@@ -1,5 +1,0 @@
-_colored_user="%{${fg[green]}%}%n%{${reset_color}%}"
-_colored_host="%{${fg[white]}%}%m%{${reset_color}%}"
-
-# prompt setting
-PROMPT="[${_colored_user}@${_colored_host} %~]%# "

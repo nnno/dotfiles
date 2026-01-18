@@ -13,17 +13,6 @@ if [ -d "$HOME/work/flutter/bin" ] ; then
   export PATH="$PATH:$HOME/work/flutter/bin"
 fi
 
-# asdf
-if [ -d "$HOME/.homebrew/opt/asdf" ] ; then
-  . "$HOME"/.homebrew/opt/asdf/libexec/asdf.sh
-  export PATH=$HOME/.asdf/shims:$PATH
-fi
-
-# Rancher Desktop
-if [ -d "$HOME/.rd/bin" ] ; then
-  export PATH="$HOME/.rd/bin:$PATH"
-fi
-
 export EDITOR='vim'
 
 setopt auto_pushd                               # cd時にディレクトリスタックに積む
@@ -68,3 +57,20 @@ if type docker &>/dev/null; then
   fi
 fi
 
+# Jetbrains IDE
+export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
+export PATH="/Applications/GoLand.app/Contents/MacOS:$PATH"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/nnno/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/nnno/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nnno/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/nnno/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nnno/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(mise activate zsh)"

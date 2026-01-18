@@ -1,27 +1,15 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+source "$SCRIPT_DIR"/bin/lib/common.sh
+
 # ============================================================
 # symlink
 # ============================================================
-
-function symlink() {
-  DIR=$1
-  for dotfile in "${DIR}"/.??* ; do
-    [[ "$dotfile" == "${DIR}/.git" ]] && continue
-    [[ "$dotfile" == "${DIR}/.github" ]] && continue
-    [[ "$dotfile" == "${DIR}/.DS_Store" ]] && continue
-    [[ "$dotfile" == "${DIR}/.idea" ]] && continue
-    [[ "$dotfile" == "${DIR}/." ]] && continue
-
-    ln -fnsv "$dotfile" "$HOME"
-  done
-}
-
-SCRIPT_DIR="$(cd "$(dirname "$1")" && pwd)"
 symlink "$SCRIPT_DIR"/dotfiles
 
 # ============================================================
-# zsh, sheldon, peco
+# zsh, sheldon, fzf
 # ============================================================
 # install sheldon (from Pre-built binaries)
 if [ ! -e "$HOME"/.local/bin/sheldon ]; then
@@ -32,11 +20,6 @@ else
 fi
 
 # setup plugin.toml
-SCRIPT_DIR="$(cd "$(dirname "$1")" && pwd)"
+setup_sheldon "$SCRIPT_DIR"
 
-if [ ! -d "$HOME"/.config/sheldon ]; then
-  mkdir -p "$HOME"/.config/sheldon
-fi
-ln -fnsv "$SCRIPT_DIR"/zsh/plugins.toml "$HOME"/.config/sheldon/plugins.toml
-
-sudo apt install peco
+sudo apt install fzf

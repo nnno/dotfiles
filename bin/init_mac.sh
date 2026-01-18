@@ -26,11 +26,11 @@ fi
 chsh -s /bin/zsh
 
 # gitはmacosデフォルトのものを使う (以前はhomebrew版を使っていたが、homebrewの非標準のパスをサポートしなくなったため)
-# ghq, pecoをインストール、dotfilesを取得する
+# ghq, fzfをインストール、dotfilesを取得する
 export PATH=$HOME/.homebrew/bin:$PATH
 export HOMEBREW_CACHE=$HOME/.homebrew/caches
 
-brew install ghq peco
+brew install ghq fzf
 
 if [ ! -d "$HOME"/src ]; then
   mkdir "$HOME"/src

@@ -30,9 +30,6 @@ github = "zsh-users/zsh-syntax-highlighting"
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 
-[plugins.asdf]
-github = "asdf-vm/asdf"
-
 [plugins.zsh-better-npm-completion]
 github = "lukechilds/zsh-better-npm-completion"
 
@@ -50,9 +47,4 @@ use = ["{{ name }}.zsh"]
 
 [plugins.dotfiles-defers]
 local = "~/src/github.com/nnno/dotfiles/zsh"
-use = ["{!sync,*}.zsh"]
-
-[plugins.dotfiles-sync]
-local = "~/src/github.com/nnno/dotfiles/zsh"
-use = ["sync.zsh"]
-apply = ["source"]
+use = ["fzf.zsh"]

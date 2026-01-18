@@ -9,10 +9,10 @@ tap "homebrew/services"
 
 #
 # -----------------------------------------------------------------------------
-brew "asdf"
+brew "mise"
 brew "freetype"
 brew "ghq"
-brew "peco"
+brew "fzf"
 brew "pt"                                   # the platinum searcher
 brew "sheldon"
 brew "tig"
@@ -21,6 +21,7 @@ brew "wget"
 brew "xh"
 brew "zsh"
 cask "font-jetbrains-mono"
+brew "gh"
 
 # yabai + skhd (tiling window manager)
 # -----------------------------------------------------------------------------
