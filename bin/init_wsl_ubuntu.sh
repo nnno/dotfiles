@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ghq_download_url='https://github.com/x-motemen/ghq/releases/download/v1.4.2/ghq_linux_amd64.zip'
+ghq_download_url=$(curl -s https://api.github.com/repos/x-motemen/ghq/releases/latest | grep -oP '"browser_download_url": "\K[^"]*ghq_linux_amd64\.zip')
 
 export PATH="$PATH:$HOME/.local/bin"
 
