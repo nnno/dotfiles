@@ -39,6 +39,20 @@ fi
 ln -fnsv "$SCRIPT_DIR"/mise/config.toml "$HOME"/.config/mise/config.toml
 
 # ============================================================
+# AI tools (Claude Code, OpenAI Codex)
+# ============================================================
+# Claude Code
+mkdir -p "$HOME"/.claude
+ln -fnsv "$SCRIPT_DIR"/config/claude/CLAUDE.md "$HOME"/.claude/CLAUDE.md
+symlink_subdirs "$SCRIPT_DIR"/config/claude/skills "$HOME"/.claude/skills
+symlink_subdirs "$SCRIPT_DIR"/config/claude/commands "$HOME"/.claude/commands
+
+# OpenAI Codex
+mkdir -p "$HOME"/.codex
+ln -fnsv "$SCRIPT_DIR"/config/codex/AGENTS.md "$HOME"/.codex/AGENTS.md
+symlink_subdirs "$SCRIPT_DIR"/config/codex/skills "$HOME"/.codex/skills
+
+# ============================================================
 # brew
 # ============================================================
 export PATH=$HOME/.homebrew/bin:$PATH

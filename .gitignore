@@ -3,3 +3,19 @@ dotfiles/.vim/*
 brew/*.json
 .idea
 
+# Claude Code ローカル設定（プロジェクト）
+.claude/settings.local.json
+.claude/plans/
+CLAUDE.local.md
+
+# Claude Code ローカル設定（dotfiles）
+config/claude/settings.local.json
+config/claude/CLAUDE.local.md
+
+# Codex CLI ローカル設定（dotfiles）
+config/codex/.credentials.json
+config/codex/config.toml
+config/codex/history.jsonl
+config/codex/sessions/
+config/codex/rollouts/
+config/codex/logs/

@@ -20,3 +20,15 @@ function setup_sheldon() {
   fi
   ln -fnsv "$SCRIPT_DIR"/zsh/plugins.toml "$HOME"/.config/sheldon/plugins.toml
 }
+
+# ディレクトリ内の各サブディレクトリをリンク
+function symlink_subdirs() {
+  local SRC_DIR=$1
+  local DEST_DIR=$2
+  mkdir -p "$DEST_DIR"
+  for item in "$SRC_DIR"/*/ ; do
+    [[ ! -d "$item" ]] && continue
+    [[ "$(basename "$item")" == ".git" ]] && continue
+    ln -fnsv "$item" "$DEST_DIR"/
+  done
+}
