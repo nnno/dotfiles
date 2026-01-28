@@ -8,11 +8,6 @@ export HOMEBREW_CACHE=$HOME/.homebrew/caches
 # sheldon
 eval "$(sheldon source)"
 
-# flutter
-if [ -d "$HOME/work/flutter/bin" ] ; then
-  export PATH="$PATH:$HOME/work/flutter/bin"
-fi
-
 export EDITOR='vim'
 
 setopt auto_pushd                               # cd時にディレクトリスタックに積む
@@ -46,20 +41,6 @@ if type go &>/dev/null; then
   export GOPATH=$(go env GOPATH)
   export PATH=$PATH:$GOPATH/bin
 fi
-
-# docker
-if type docker &>/dev/null; then
-  if [[ -z `docker context ls --format json | jq -r '. | select(.Current == true) | .DockerEndpoint'` ]]; then
-    unset $DOCKER_HOST
-  else
-    # colima使っている場合、明示しないと動作しないケースがある
-    export DOCKER_HOST=`docker context ls --format json | jq -r '. | select(.Current == true) | .DockerEndpoint'`
-  fi
-fi
-
-# Jetbrains IDE
-export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
-export PATH="/Applications/GoLand.app/Contents/MacOS:$PATH"
 
 eval "$(mise activate zsh)"
 
