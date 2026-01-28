@@ -6,7 +6,30 @@
 - `dotfiles/` : `$HOME` に シンボリックリンク する 設定 ファイル。例 `.zshrc` `.vimrc` `.tmux.conf`。
 - `brew/` : Homebrew の Bundle 定義。例 `Brewfile` `Brewfile.macapp`。
 - `zsh/` : sheldon 用 の プラグイン 定義 と 補助 スクリプト。例 `plugins.toml`。
-- `old/` : 退避 済み の 設定。新規 変更 は 原則 置かない。
+- `mise/` : mise 設定（`config.toml` → `~/.config/mise/`）。
+- `config/` : AI ツール 設定（`claude/` → `~/.claude/`, `codex/` → `~/.codex/`）。
+
+## init と setup の責務分担
+
+| スクリプト | 責務 | 実行タイミング |
+|------------|------|----------------|
+| `init_*.sh` | dotfiles を取得するまでの最小限のブートストラップ | 新規マシンで1回のみ |
+| `setup_*.sh` | dotfiles を使った設定適用 + ソフトウェアのインストール | 何度でも再実行可能 |
+
+### init_*.sh が行うこと
+- OS 固有の前提条件（Xcode CLI）
+- パッケージマネージャー自体のインストール（Homebrew）
+- dotfiles 取得に必要な最小ツール（ghq, fzf）
+- シェルの変更（zsh）
+- dotfiles リポジトリの取得（`ghq get`）
+
+### setup_*.sh が行うこと
+- dotfiles のシンボリックリンク作成
+- 環境設定（macOS defaults, sheldon, mise 設定）
+- パッケージのインストール（`brew bundle`, `mise install`）
+- AI ツールのインストールと設定
+  - macOS: Claude Code, Codex のインストールと `~/.claude`, `~/.codex` の設定
+  - Raspberry Pi 4 / WSL Ubuntu: Claude Code のインストールのみ
 
 ## Build, Test, and Development Commands
 主要 な 実行 は Makefile か 直実行 で 行います。
@@ -15,7 +38,7 @@
 - `make mac-brew` : `brew/Brewfile` で パッケージ を 一括 取得。
 - `make mac-all` : macOS の 一連 処理 を まとめて 実行。
 - `make rpi4-all` / `make wsl_ubuntu-all` : 各 環境 向け の 初期化 と 設定。
-必要 に 応じて `sh bin/setup_mac.sh` の ように 個別 実行 も 可能 です。
+必要 に 応じて `bash bin/setup_mac.sh` の ように 個別 実行 も 可能 です。
 
 ## Coding Style & Naming Conventions
 - Shell は `bash` 前提。新規 スクリプト も `#!/usr/bin/env bash` を 付け、`set -o pipefail` を 使う。

@@ -8,11 +8,6 @@ export HOMEBREW_CACHE=$HOME/.homebrew/caches
 # sheldon
 eval "$(sheldon source)"
 
-# flutter
-if [ -d "$HOME/work/flutter/bin" ] ; then
-  export PATH="$PATH:$HOME/work/flutter/bin"
-fi
-
 export EDITOR='vim'
 
 setopt auto_pushd                               # cd時にディレクトリスタックに積む
@@ -47,30 +42,9 @@ if type go &>/dev/null; then
   export PATH=$PATH:$GOPATH/bin
 fi
 
-# docker
-if type docker &>/dev/null; then
-  if [[ -z `docker context ls --format json | jq -r '. | select(.Current == true) | .DockerEndpoint'` ]]; then
-    unset $DOCKER_HOST
-  else
-    # colima使っている場合、明示しないと動作しないケースがある
-    export DOCKER_HOST=`docker context ls --format json | jq -r '. | select(.Current == true) | .DockerEndpoint'`
-  fi
-fi
-
-# Jetbrains IDE
-export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
-export PATH="/Applications/GoLand.app/Contents/MacOS:$PATH"
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/nnno/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/nnno/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nnno/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/nnno/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nnno/google-cloud-sdk/completion.zsh.inc'; fi
-
 eval "$(mise activate zsh)"
+
+# Load machine-specific settings
+if [ -f "$HOME/.zshrc.local" ]; then
+  source "$HOME/.zshrc.local"
+fi

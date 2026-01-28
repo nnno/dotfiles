@@ -9,9 +9,9 @@ macOS / Raspberry Pi 4 / WSL Ubuntu の初期化と dotfiles 管理を行うリ�
 ## ディレクトリ構成
 
 - `bin/` - OS別スクリプト
-  - `init_*.sh` - 前提条件の準備（Xcode CLI、Homebrew 等）
-  - `setup_*.sh` - dotfiles の symlink 作成と設定適用
-  - `lib/common.sh` - 共通関数（`symlink`, `setup_sheldon`, `symlink_subdirs`）
+  - `init_*.sh` - dotfiles 取得までの最小限のブートストラップ
+  - `setup_*.sh` - dotfiles を使った設定適用 + ソフトウェアのインストール
+  - `bin/lib/common.sh` - 共通関数（`symlink`, `setup_sheldon`, `symlink_subdirs`）
 - `dotfiles/` - `$HOME` にシンボリックリンクする設定ファイル（`.zshrc`, `.vimrc` 等）
 - `brew/` - Homebrew Bundle 定義（`Brewfile`, `Brewfile.macapp`）
 - `zsh/` - sheldon 用プラグイン定義（`plugins.toml`）
@@ -19,6 +19,28 @@ macOS / Raspberry Pi 4 / WSL Ubuntu の初期化と dotfiles 管理を行うリ�
 - `config/` - AI ツール設定
   - `claude/` → `~/.claude/` にシンボリックリンク
   - `codex/` → `~/.codex/` にシンボリックリンク
+
+## init と setup の責務分担
+
+| スクリプト | 責務 | 実行タイミング |
+|------------|------|----------------|
+| `init_*.sh` | dotfiles を取得するまでの最小限のブートストラップ | 新規マシンで1回のみ |
+| `setup_*.sh` | dotfiles を使った設定適用 + ソフトウェアのインストール | 何度でも再実行可能 |
+
+### init_*.sh が行うこと
+- OS 固有の前提条件（Xcode CLI）
+- パッケージマネージャー自体のインストール（Homebrew）
+- dotfiles 取得に必要な最小ツール（ghq, fzf）
+- シェルの変更（zsh）
+- dotfiles リポジトリの取得（`ghq get`）
+
+### setup_*.sh が行うこと
+- dotfiles のシンボリックリンク作成
+- 環境設定（macOS defaults, sheldon, mise 設定）
+- パッケージのインストール（`brew bundle`, `mise install`）
+- AI ツールのインストールと設定
+  - macOS: Claude Code, Codex のインストールと `~/.claude`, `~/.codex` の設定
+  - Raspberry Pi 4 / WSL Ubuntu: Claude Code のインストールのみ
 
 ## コマンド
 
@@ -36,7 +58,7 @@ make rpi4-all
 make wsl_ubuntu-all
 ```
 
-個別実行: `sh bin/setup_mac.sh`
+個別実行: `bash bin/setup_mac.sh`
 
 ## コーディング規約
 

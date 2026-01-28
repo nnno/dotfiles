@@ -23,3 +23,11 @@ fi
 setup_sheldon "$SCRIPT_DIR"
 
 sudo apt install fzf
+
+# ============================================================
+# AI tools (Claude Code)
+# ============================================================
+# Claude Code (Native Install)
+if ! type claude &>/dev/null; then
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
