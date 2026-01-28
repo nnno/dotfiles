@@ -41,7 +41,11 @@ ln -fnsv "$SCRIPT_DIR"/mise/config.toml "$HOME"/.config/mise/config.toml
 # ============================================================
 # AI tools (Claude Code, OpenAI Codex)
 # ============================================================
-# Claude Code
+# Claude Code (Native Install)
+if ! type claude &>/dev/null; then
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
+
 mkdir -p "$HOME"/.claude
 ln -fnsv "$SCRIPT_DIR"/config/claude/CLAUDE.md "$HOME"/.claude/CLAUDE.md
 symlink_subdirs "$SCRIPT_DIR"/config/claude/skills "$HOME"/.claude/skills

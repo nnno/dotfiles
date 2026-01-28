@@ -6,7 +6,28 @@
 - `dotfiles/` : `$HOME` に シンボリックリンク する 設定 ファイル。例 `.zshrc` `.vimrc` `.tmux.conf`。
 - `brew/` : Homebrew の Bundle 定義。例 `Brewfile` `Brewfile.macapp`。
 - `zsh/` : sheldon 用 の プラグイン 定義 と 補助 スクリプト。例 `plugins.toml`。
-- `old/` : 退避 済み の 設定。新規 変更 は 原則 置かない。
+- `mise/` : mise 設定（`config.toml` → `~/.config/mise/`）。
+- `config/` : AI ツール 設定（`claude/` → `~/.claude/`, `codex/` → `~/.codex/`）。
+
+## init と setup の責務分担
+
+| スクリプト | 責務 | 実行タイミング |
+|------------|------|----------------|
+| `init_*.sh` | dotfiles を取得するまでの最小限のブートストラップ | 新規マシンで1回のみ |
+| `setup_*.sh` | dotfiles を使った設定適用 + ソフトウェアのインストール | 何度でも再実行可能 |
+
+### init_*.sh が行うこと
+- OS 固有の前提条件（Xcode CLI）
+- パッケージマネージャー自体のインストール（Homebrew）
+- dotfiles 取得に必要な最小ツール（ghq, fzf）
+- シェルの変更（zsh）
+- dotfiles リポジトリの取得（`ghq get`）
+
+### setup_*.sh が行うこと
+- dotfiles のシンボリックリンク作成
+- 環境設定（macOS defaults, sheldon, mise 設定）
+- パッケージのインストール（`brew bundle`, `mise install`）
+- AI ツールのインストールと設定（Claude Code, Codex）
 
 ## Build, Test, and Development Commands
 主要 な 実行 は Makefile か 直実行 で 行います。
