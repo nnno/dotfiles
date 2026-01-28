@@ -39,3 +39,26 @@ make wsl_ubuntu-all
 - 環境設定（macOS defaults, sheldon, mise 設定）
 - パッケージのインストール（`brew bundle`, `mise install`）
 - AI ツールのインストールと設定（Claude Code, Codex）
+
+## マシン固有の設定
+
+各マシン固有の設定は `~/.zshrc.local` に記載してください（git 管理対象外）。
+
+例: Docker Desktop や Google Cloud SDK を使う場合
+
+```zsh
+# ~/.zshrc.local
+
+# Docker Desktop completions
+if [ -d "$HOME/.docker/completions" ]; then
+  fpath=($HOME/.docker/completions $fpath)
+fi
+
+# Google Cloud SDK
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc"
+fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/completion.zsh.inc"
+fi
+```

@@ -19,3 +19,6 @@ config/codex/history.jsonl
 config/codex/sessions/
 config/codex/rollouts/
 config/codex/logs/
+
+# マシン固有の zsh 設定
+dotfiles/.zshrc.local

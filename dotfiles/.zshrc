@@ -60,17 +60,10 @@ fi
 # Jetbrains IDE
 export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
 export PATH="/Applications/GoLand.app/Contents/MacOS:$PATH"
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/nnno/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/nnno/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nnno/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/nnno/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nnno/google-cloud-sdk/completion.zsh.inc'; fi
 
 eval "$(mise activate zsh)"
+
+# Load machine-specific settings
+if [ -f "$HOME/.zshrc.local" ]; then
+  source "$HOME/.zshrc.local"
+fi
