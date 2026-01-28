@@ -18,7 +18,7 @@ make rpi4-all
 make wsl_ubuntu-all
 ```
 
-個別実行: `sh bin/setup_mac.sh`
+個別実行: `bash bin/setup_mac.sh`
 
 ## init と setup の責務分担
 
@@ -38,7 +38,9 @@ make wsl_ubuntu-all
 - dotfiles のシンボリックリンク作成
 - 環境設定（macOS defaults, sheldon, mise 設定）
 - パッケージのインストール（`brew bundle`, `mise install`）
-- AI ツールのインストールと設定（Claude Code, Codex）
+- AI ツールのインストールと設定
+  - macOS: Claude Code, Codex のインストールと `~/.claude`, `~/.codex` の設定
+  - Raspberry Pi 4 / WSL Ubuntu: Claude Code のインストールのみ
 
 ## マシン固有の設定
 

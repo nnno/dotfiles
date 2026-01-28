@@ -27,7 +27,9 @@
 - dotfiles のシンボリックリンク作成
 - 環境設定（macOS defaults, sheldon, mise 設定）
 - パッケージのインストール（`brew bundle`, `mise install`）
-- AI ツールのインストールと設定（Claude Code, Codex）
+- AI ツールのインストールと設定
+  - macOS: Claude Code, Codex のインストールと `~/.claude`, `~/.codex` の設定
+  - Raspberry Pi 4 / WSL Ubuntu: Claude Code のインストールのみ
 
 ## Build, Test, and Development Commands
 主要 な 実行 は Makefile か 直実行 で 行います。
@@ -36,7 +38,7 @@
 - `make mac-brew` : `brew/Brewfile` で パッケージ を 一括 取得。
 - `make mac-all` : macOS の 一連 処理 を まとめて 実行。
 - `make rpi4-all` / `make wsl_ubuntu-all` : 各 環境 向け の 初期化 と 設定。
-必要 に 応じて `sh bin/setup_mac.sh` の ように 個別 実行 も 可能 です。
+必要 に 応じて `bash bin/setup_mac.sh` の ように 個別 実行 も 可能 です。
 
 ## Coding Style & Naming Conventions
 - Shell は `bash` 前提。新規 スクリプト も `#!/usr/bin/env bash` を 付け、`set -o pipefail` を 使う。
