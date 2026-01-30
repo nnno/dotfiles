@@ -48,6 +48,7 @@ fi
 
 mkdir -p "$HOME"/.claude
 ln -fnsv "$SCRIPT_DIR"/config/claude/CLAUDE.md "$HOME"/.claude/CLAUDE.md
+ln -fnsv "$SCRIPT_DIR"/config/claude/settings.json "$HOME"/.claude/settings.json
 symlink_subdirs "$SCRIPT_DIR"/config/claude/skills "$HOME"/.claude/skills
 symlink_subdirs "$SCRIPT_DIR"/config/claude/commands "$HOME"/.claude/commands
 
