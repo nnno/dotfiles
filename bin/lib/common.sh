@@ -21,6 +21,14 @@ function setup_sheldon() {
   ln -fnsv "$SCRIPT_DIR"/zsh/plugins.toml "$HOME"/.config/sheldon/plugins.toml
 }
 
+function setup_tmux() {
+  local SCRIPT_DIR=$1
+  if [ ! -d "$HOME"/.config/tmux ]; then
+    mkdir -p "$HOME"/.config/tmux
+  fi
+  ln -fnsv "$SCRIPT_DIR"/tmux/tmux.conf "$HOME"/.config/tmux/tmux.conf
+}
+
 # ディレクトリ内の各サブディレクトリをリンク
 function symlink_subdirs() {
   local SRC_DIR=$1

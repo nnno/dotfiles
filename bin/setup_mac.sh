@@ -32,6 +32,11 @@ symlink "$SCRIPT_DIR"/dotfiles
 # ============================================================
 setup_sheldon "$SCRIPT_DIR"
 
+# ============================================================
+# tmux
+# ============================================================
+setup_tmux "$SCRIPT_DIR"
+
 # mise
 if [ ! -d "$HOME"/.config/mise ]; then
   mkdir -p "$HOME"/.config/mise
