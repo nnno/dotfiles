@@ -29,13 +29,13 @@ function setup_tmux() {
   ln -fnsv "$SCRIPT_DIR"/tmux/tmux.conf "$HOME"/.config/tmux/tmux.conf
 }
 
-# ディレクトリ内の各サブディレクトリをリンク
+# ディレクトリ内の各サブディレクトリとファイルをリンク
 function symlink_subdirs() {
   local SRC_DIR=$1
   local DEST_DIR=$2
   mkdir -p "$DEST_DIR"
-  for item in "$SRC_DIR"/*/ ; do
-    [[ ! -d "$item" ]] && continue
+  for item in "$SRC_DIR"/* ; do
+    [[ ! -e "$item" ]] && continue
     [[ "$(basename "$item")" == ".git" ]] && continue
     ln -fnsv "$item" "$DEST_DIR"/
   done
