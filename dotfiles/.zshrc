@@ -21,11 +21,12 @@ setopt list_types                               # 補完候補にファイルの
 # History
 export HIST_STAMPS='yyyy/mm/dd'
 export HISTFILE=${HOME}/.zsh_history
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 
 setopt extended_history                         # ヒストリに実行時間も保存する
-setopt hist_ignore_dups                         # 直前と同じコマンドはヒストリに追加しない
+setopt hist_ignore_all_dups                     # 重複するコマンドは古い方を削除する
+setopt hist_expire_dups_first                   # 履歴が上限に達したら重複から先に削除する
 setopt share_history                            # 他のシェルのヒストリをリアルタイムで共有する
 setopt hist_reduce_blanks                       # 余分なスペースを削除してヒストリに保存する
 
