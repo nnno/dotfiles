@@ -45,6 +45,36 @@ fi
 
 eval "$(mise activate zsh)"
 
+# tmux セッション切替（ghq + $HOME/work + fzf）
+function tmux-session() {
+  local ghq_root=$(ghq root)
+  local candidates=$(
+    ghq list | sed "s|^|${ghq_root}/|"
+    find "$HOME/work" -mindepth 1 -maxdepth 1 -type d 2>/dev/null
+  )
+  local selected
+  selected=$(echo "$candidates" | fzf --prompt="tmux session > " --preview="ls -la {}")
+  if [ -z "$selected" ]; then
+    return
+  fi
+  local session_name=$(basename "$selected")
+  local project_dir=$selected
+
+  if tmux has-session -t "$session_name" 2>/dev/null; then
+    if [ -n "$TMUX" ]; then
+      tmux switch-client -t "$session_name"
+    else
+      tmux attach-session -t "$session_name"
+    fi
+  else
+    if [ -n "$TMUX" ]; then
+      tmux new-session -d -s "$session_name" -c "$project_dir" && tmux switch-client -t "$session_name"
+    else
+      tmux new-session -s "$session_name" -c "$project_dir"
+    fi
+  fi
+}
+
 # Load machine-specific settings
 if [ -f "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"

@@ -9,6 +9,7 @@ tap "homebrew/services"
 
 #
 # -----------------------------------------------------------------------------
+brew "tmux"
 brew "mise"
 brew "freetype"
 brew "ghq"

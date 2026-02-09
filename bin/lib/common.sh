@@ -27,6 +27,13 @@ function setup_tmux() {
     mkdir -p "$HOME"/.config/tmux
   fi
   ln -fnsv "$SCRIPT_DIR"/tmux/tmux.conf "$HOME"/.config/tmux/tmux.conf
+
+  # TPM (tmux plugin manager) のインストール
+  local TPM_DIR="$HOME/.config/tmux/plugins/tpm"
+  if [ ! -d "$TPM_DIR" ]; then
+    echo "Installing TPM..."
+    git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+  fi
 }
 
 # ディレクトリ内の各サブディレクトリとファイルをリンク
