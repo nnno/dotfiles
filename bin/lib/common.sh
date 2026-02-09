@@ -28,6 +28,10 @@ function setup_tmux() {
   fi
   ln -fnsv "$SCRIPT_DIR"/tmux/tmux.conf "$HOME"/.config/tmux/tmux.conf
 
+  # tmux 用スクリプトを ~/.local/bin に配置
+  mkdir -p "$HOME"/.local/bin
+  ln -fnsv "$SCRIPT_DIR"/tmux/tmux-session "$HOME"/.local/bin/tmux-session
+
   # TPM (tmux plugin manager) のインストール
   local TPM_DIR="$HOME/.config/tmux/plugins/tpm"
   if [ ! -d "$TPM_DIR" ]; then
