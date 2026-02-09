@@ -45,6 +45,21 @@ fi
 
 eval "$(mise activate zsh)"
 
+# tmux セッション自動命名（ghq リポジトリ移動時）
+if [[ -n "$TMUX" ]] && type ghq &>/dev/null; then
+  function _tmux_rename_session_by_ghq() {
+    local ghq_root
+    ghq_root=$(ghq root 2>/dev/null) || return
+    if [[ "$PWD" == "$ghq_root"/* ]]; then
+      local repo_name="${PWD##*/}"
+      local session_name="${repo_name//./-}"
+      tmux rename-session "$session_name" 2>/dev/null
+    fi
+  }
+  autoload -Uz add-zsh-hook
+  add-zsh-hook chpwd _tmux_rename_session_by_ghq
+fi
+
 # Load machine-specific settings
 if [ -f "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
