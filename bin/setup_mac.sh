@@ -44,6 +44,12 @@ fi
 ln -fnsv "$SCRIPT_DIR"/mise/config.toml "$HOME"/.config/mise/config.toml
 
 # ============================================================
+# Ghostty
+# ============================================================
+mkdir -p "$HOME"/.config/ghostty
+ln -fnsv "$SCRIPT_DIR"/config/ghostty/config "$HOME"/.config/ghostty/config
+
+# ============================================================
 # AI tools (Claude Code, OpenAI Codex)
 # ============================================================
 # Claude Code (Native Install)

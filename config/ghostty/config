@@ -1,0 +1,23 @@
+# Font
+font-family = JetBrains Mono
+font-size = 14
+
+# Window
+window-padding-x = 4
+window-padding-y = 4
+window-decoration = true
+macos-titlebar-style = tabs
+
+# Theme
+theme = Gruvbox Dark
+
+# Clipboard
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = clipboard
+
+# Mouse
+mouse-scroll-multiplier = 3
+
+# Shell integration
+shell-integration = zsh

@@ -13,6 +13,7 @@ cask 'google-chrome'
 cask 'slack'
 cask 'the-unarchiver'
 cask 'visual-studio-code'
+cask 'ghostty'
 
 # mas - mac app store application.
 # -----------------------------------------------------------------------------
