@@ -9,7 +9,7 @@ window-decoration = true
 macos-titlebar-style = tabs
 
 # Theme
-theme = Gruvbox Dark
+theme = Ayu
 
 # Clipboard
 clipboard-read = allow
