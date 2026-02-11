@@ -1,6 +1,7 @@
 # Font
 font-family = JetBrains Mono
 font-size = 14
+adjust-cell-height = 2
 
 # Window
 window-padding-x = 4
@@ -11,6 +12,10 @@ macos-titlebar-style = tabs
 # Theme
 theme = Ayu
 
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
 # Clipboard
 clipboard-read = allow
 clipboard-write = allow
@@ -18,6 +23,9 @@ copy-on-select = clipboard
 
 # Mouse
 mouse-scroll-multiplier = 3
+
+# macOS
+macos-option-as-alt = true
 
 # Shell integration
 shell-integration = zsh
