@@ -2,6 +2,22 @@
 
 macOS / Raspberry Pi 4 / WSL Ubuntu の初期化と dotfiles 管理を行うリポジトリ。
 
+## ディレクトリ構成
+
+- `bin/` - OS別スクリプト
+  - `init_*.sh` - dotfiles 取得までの最小限のブートストラップ
+  - `setup_*.sh` - dotfiles を使った設定適用 + ソフトウェアのインストール
+  - `bin/lib/common.sh` - 共通関数（`symlink`, `setup_sheldon`, `symlink_subdirs`）
+- `dotfiles/` - `$HOME` にシンボリックリンクする設定ファイル（`.zshrc`, `.vimrc` 等）
+- `brew/` - Homebrew Bundle 定義（`Brewfile`, `Brewfile.macapp`）
+- `zsh/` - sheldon 用プラグイン定義（`plugins.toml`）
+- `tmux/` - tmux 設定（`tmux.conf`、セッション管理、Claude Code 通知スクリプト）
+- `mise/` - mise 設定（`config.toml` → `~/.config/mise/`）
+- `config/` - アプリケーション設定
+  - `claude/` → `~/.claude/` にシンボリックリンク
+  - `codex/` → `~/.codex/` にシンボリックリンク
+  - `ghostty/` → Ghostty ターミナルの設定
+
 ## 使い方
 
 ```bash
