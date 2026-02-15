@@ -31,6 +31,9 @@ function setup_tmux() {
   # tmux 用スクリプトを ~/.local/bin に配置
   mkdir -p "$HOME"/.local/bin
   ln -fnsv "$SCRIPT_DIR"/tmux/tmux-session "$HOME"/.local/bin/tmux-session
+  ln -fnsv "$SCRIPT_DIR"/tmux/claude-notify.sh "$HOME"/.local/bin/claude-notify.sh
+  ln -fnsv "$SCRIPT_DIR"/tmux/claude-status.sh "$HOME"/.local/bin/claude-status.sh
+  ln -fnsv "$SCRIPT_DIR"/tmux/claude-cleanup.sh "$HOME"/.local/bin/claude-cleanup.sh
 
   # TPM (tmux plugin manager) のインストール
   local TPM_DIR="$HOME/.config/tmux/plugins/tpm"
