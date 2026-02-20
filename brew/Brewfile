@@ -24,6 +24,7 @@ brew "zsh"
 cask "font-jetbrains-mono"
 brew "gh"
 brew "lazygit"
+brew "yazi"
 
 # yabai + skhd (tiling window manager)
 # -----------------------------------------------------------------------------
