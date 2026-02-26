@@ -2,9 +2,32 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
+  "language": "ja",
   "attribution": {
     "commit": "",
     "pr": ""
+  },
+  "includeCoAuthoredBy": false,
+  "autoUpdatesChannel": "stable",
+  "cleanupPeriodDays": 30,
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
+    "excludedCommands": ["docker"]
+  },
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(./secrets/**)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.gnupg/**)",
+      "Bash(rm -rf *)",
+      "Bash(curl *)",
+      "Bash(wget *)"
+    ]
   },
   "hooks": {
     "UserPromptSubmit": [
@@ -44,6 +67,17 @@
           {
             "type": "command",
             "command": "~/.local/bin/claude-notify.sh notification"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Reminder: ユーザーには日本語で応答してください。'"
           }
         ]
       }
