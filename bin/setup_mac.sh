@@ -50,6 +50,12 @@ mkdir -p "$HOME"/.config/ghostty
 ln -fnsv "$SCRIPT_DIR"/config/ghostty/config "$HOME"/.config/ghostty/config
 
 # ============================================================
+# AeroSpace (tiling window manager)
+# ============================================================
+mkdir -p "$HOME"/.config/aerospace
+ln -fnsv "$SCRIPT_DIR"/config/aerospace/aerospace.toml "$HOME"/.config/aerospace/aerospace.toml
+
+# ============================================================
 # AI tools (Claude Code, OpenAI Codex)
 # ============================================================
 # Claude Code (Native Install)

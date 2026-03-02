@@ -1,0 +1,97 @@
+# AeroSpace - i3-like tiling window manager for macOS
+# https://nikitabobko.github.io/AeroSpace/guide
+
+start-at-login = true
+
+# yabai の BSP に相当
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# normalizations (i3 の振る舞いに合わせる)
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# cmd-h でアプリを隠した場合に自動的に再表示する
+# (macOS の Hide がタイリングを壊すのを防ぐ)
+automatically-unhide-macos-hidden-apps = true
+
+# yabai の padding / window_gap に相当
+[gaps]
+inner.horizontal = 6
+inner.vertical = 6
+outer.left = 6
+outer.right = 6
+outer.top = 6
+outer.bottom = 6
+
+# =============================================================
+# Key bindings
+# =============================================================
+[mode.main.binding]
+
+# -- focus window (alt + hjkl) --
+# モニター境界を越えてフォーカス移動する
+alt-h = 'focus --boundaries all-monitors-outer-frame left'
+alt-j = 'focus --boundaries all-monitors-outer-frame down'
+alt-k = 'focus --boundaries all-monitors-outer-frame up'
+alt-l = 'focus --boundaries all-monitors-outer-frame right'
+
+# -- swap window (shift + alt + hjkl) --
+alt-shift-h = 'swap left'
+alt-shift-j = 'swap down'
+alt-shift-k = 'swap up'
+alt-shift-l = 'swap right'
+
+# -- move window in tree (ctrl + alt + hjkl) --
+ctrl-alt-h = 'move left'
+ctrl-alt-j = 'move down'
+ctrl-alt-k = 'move up'
+ctrl-alt-l = 'move right'
+
+# -- resize (ctrl + shift + hjkl) --
+ctrl-shift-h = 'resize width -50'
+ctrl-shift-l = 'resize width +50'
+ctrl-shift-j = 'resize height +50'
+ctrl-shift-k = 'resize height -50'
+
+# -- fullscreen --
+alt-f = 'fullscreen'
+
+# -- toggle split direction (alt-e) --
+alt-e = 'layout horizontal vertical'
+
+# -- float / unfloat (alt-t) --
+alt-t = 'layout floating tiling'
+
+# -- balance sizes (alt-0) --
+alt-0 = 'balance-sizes'
+
+# -- workspace switching (ctrl + number) --
+ctrl-1 = 'workspace 1'
+ctrl-2 = 'workspace 2'
+ctrl-3 = 'workspace 3'
+ctrl-4 = 'workspace 4'
+ctrl-5 = 'workspace 5'
+ctrl-6 = 'workspace 6'
+ctrl-7 = 'workspace 7'
+ctrl-8 = 'workspace 8'
+ctrl-9 = 'workspace 9'
+
+# -- move window to workspace (alt + number) --
+alt-1 = 'move-node-to-workspace 1'
+alt-2 = 'move-node-to-workspace 2'
+alt-3 = 'move-node-to-workspace 3'
+alt-4 = 'move-node-to-workspace 4'
+alt-5 = 'move-node-to-workspace 5'
+alt-6 = 'move-node-to-workspace 6'
+alt-7 = 'move-node-to-workspace 7'
+alt-8 = 'move-node-to-workspace 8'
+alt-9 = 'move-node-to-workspace 9'
+
+# =============================================================
+# Window rules (on-window-detected)
+# =============================================================
+# 必要に応じて追加:
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari'
+# run = 'move-node-to-workspace 2'
