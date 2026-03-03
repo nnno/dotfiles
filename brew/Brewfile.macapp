@@ -14,6 +14,8 @@ cask 'slack'
 cask 'the-unarchiver'
 cask 'visual-studio-code'
 cask 'ghostty'
+cask 'nikitabobko/tap/aerospace'
+
 
 # mas - mac app store application.
 # -----------------------------------------------------------------------------
