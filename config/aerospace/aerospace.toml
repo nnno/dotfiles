@@ -57,8 +57,10 @@ ctrl-shift-k = 'resize height -50'
 # -- fullscreen --
 alt-f = 'fullscreen'
 
-# -- toggle split direction (alt-e) --
-alt-e = 'layout horizontal vertical'
+# -- join-with: フォーカス中のウィンドウと指定方向のウィンドウを
+# 共通の親コンテナにまとめる (alt-e + hjkl)
+alt-e = 'mode join'
+ctrl-alt-e = 'flatten-workspace-tree'
 
 # -- float / unfloat (alt-t) --
 alt-t = 'layout floating tiling'
@@ -87,6 +89,16 @@ alt-6 = 'move-node-to-workspace 6'
 alt-7 = 'move-node-to-workspace 7'
 alt-8 = 'move-node-to-workspace 8'
 alt-9 = 'move-node-to-workspace 9'
+
+# =============================================================
+# Join mode (alt-e → hjkl で方向を指定)
+# =============================================================
+[mode.join.binding]
+h = ['join-with left', 'mode main']
+j = ['join-with down', 'mode main']
+k = ['join-with up', 'mode main']
+l = ['join-with right', 'mode main']
+esc = 'mode main'
 
 # =============================================================
 # Window rules (on-window-detected)
