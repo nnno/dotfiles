@@ -9,7 +9,9 @@ export PATH="$HOME/.homebrew/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 ghq_root=$(ghq root)
 candidates=$(
   ghq list | sed "s|^|${ghq_root}/|"
-  find "$HOME/work" -mindepth 1 -maxdepth 1 -type d 2>/dev/null
+  for d in "$HOME"/work "$HOME"/work-*; do
+    find "$d" -mindepth 1 -maxdepth 1 -type d 2>/dev/null
+  done
 )
 
 selected=$(echo "$candidates" | fzf --prompt="tmux session > " --preview="ls -la {}")

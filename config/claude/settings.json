@@ -1,29 +1,20 @@
 {
+  "cleanupPeriodDays": 30,
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
-  "language": "ja",
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
-  "includeCoAuthoredBy": false,
-  "autoUpdatesChannel": "stable",
-  "cleanupPeriodDays": 30,
-  "sandbox": {
-    "enabled": true,
-    "autoAllowBashIfSandboxed": true,
-    "allowUnsandboxedCommands": false,
-    "excludedCommands": ["docker"]
-  },
   "permissions": {
+    "allow": [
+      "Bash(go build *)",
+      "Bash(go test *)",
+      "Bash(go vet *)",
+      "Bash(go mod *)",
+      "Bash(go generate *)",
+      "Bash(gofmt *)",
+      "Bash(goimports *)",
+      "Bash(golangci-lint *)"
+    ],
     "deny": [
-      "Read(.env)",
-      "Read(.env.*)",
-      "Read(./secrets/**)",
-      "Read(~/.ssh/**)",
-      "Read(~/.aws/**)",
-      "Read(~/.gnupg/**)",
       "Bash(rm -rf *)",
       "Bash(curl *)",
       "Bash(wget *)"
@@ -93,8 +84,24 @@
       }
     ]
   },
-  "enabledPlugins": {
-    "serena@claude-plugins-official": true
+  "language": "ja",
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
+    "excludedCommands": [
+      "docker",
+      "go",
+      "gofmt",
+      "goimports",
+      "golangci-lint"
+    ],
+    "filesystem": {
+      "allowWrite": [
+        "~/.cache/go-build",
+        "~/.cache/golangci-lint"
+      ]
+    }
   },
   "effortLevel": "medium"
 }
