@@ -9,6 +9,7 @@ export HOMEBREW_CACHE=$HOME/.homebrew/caches
 eval "$(sheldon source)"
 
 export EDITOR='vim'
+bindkey -e
 
 setopt auto_pushd                               # cd時にディレクトリスタックに積む
 
