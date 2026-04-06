@@ -62,6 +62,9 @@ alt-f = 'fullscreen'
 alt-e = 'mode join'
 ctrl-alt-e = 'flatten-workspace-tree'
 
+# -- layout 切り替え --
+alt-slash = 'layout tiles horizontal vertical'   # 方向トグル（横⇔縦）
+
 # -- float / unfloat (alt-t) --
 alt-t = 'layout floating tiling'
 
