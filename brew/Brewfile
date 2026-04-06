@@ -3,30 +3,25 @@
 
 # tap
 # -----------------------------------------------------------------------------
-tap "coursier/formulas"
-tap "homebrew/bundle"
-tap "homebrew/services"
 
-#
+
 # -----------------------------------------------------------------------------
 brew "tmux"
 brew "mise"
-brew "freetype"
 brew "ghq"
+brew "wget"
+brew "freetype"
 brew "fzf"
 brew "pt"                                   # the platinum searcher
 brew "sheldon"
 brew "tig"
-brew "vim"
-brew "wget"
 brew "xh"
 brew "zsh"
-cask "font-jetbrains-mono"
 brew "gh"
 brew "lazygit"
 brew "yazi"
 
-# yabai + skhd (tiling window manager)
+# cask
 # -----------------------------------------------------------------------------
-# brew "koekeishiya/formulae/yabai"
-# brew "koekeishiya/formulae/skhd"
+cask "font-jetbrains-mono"
+cask "codex"
