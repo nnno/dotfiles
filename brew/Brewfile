@@ -20,6 +20,7 @@ brew "zsh"
 brew "gh"
 brew "lazygit"
 brew "yazi"
+brew "pandoc"
 
 # cask
 # -----------------------------------------------------------------------------
