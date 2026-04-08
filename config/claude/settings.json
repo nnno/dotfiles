@@ -1,19 +1,6 @@
 {
   "cleanupPeriodDays": 30,
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-  },
   "permissions": {
-    "allow": [
-      "Bash(go build *)",
-      "Bash(go test *)",
-      "Bash(go vet *)",
-      "Bash(go mod *)",
-      "Bash(go generate *)",
-      "Bash(gofmt *)",
-      "Bash(goimports *)",
-      "Bash(golangci-lint *)"
-    ],
     "deny": [
       "Bash(rm -rf *)",
       "Bash(curl *)",
@@ -62,17 +49,6 @@
         ]
       }
     ],
-    "SessionStart": [
-      {
-        "matcher": "compact",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo 'Reminder: ユーザーには日本語で応答してください。'"
-          }
-        ]
-      }
-    ],
     "SessionEnd": [
       {
         "hooks": [
@@ -90,18 +66,8 @@
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": false,
     "excludedCommands": [
-      "docker",
-      "go",
-      "gofmt",
-      "goimports",
-      "golangci-lint"
-    ],
-    "filesystem": {
-      "allowWrite": [
-        "~/.cache/go-build",
-        "~/.cache/golangci-lint"
-      ]
-    }
+      "docker"
+    ]
   },
   "effortLevel": "medium"
 }
