@@ -22,15 +22,15 @@ fi
 session_name=$(basename "$selected")
 project_dir=$selected
 
-if tmux has-session -t "$session_name" 2>/dev/null; then
+if tmux has-session -t "=$session_name" 2>/dev/null; then
   if [ -n "$TMUX" ]; then
-    tmux switch-client -t "$session_name"
+    tmux switch-client -t "=$session_name"
   else
-    tmux attach-session -t "$session_name"
+    tmux attach-session -t "=$session_name"
   fi
 else
   if [ -n "$TMUX" ]; then
-    tmux new-session -d -s "$session_name" -c "$project_dir" && tmux switch-client -t "$session_name"
+    tmux new-session -d -s "$session_name" -c "$project_dir" && tmux switch-client -t "=$session_name"
   else
     tmux new-session -s "$session_name" -c "$project_dir"
   fi
