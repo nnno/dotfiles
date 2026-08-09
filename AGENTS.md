@@ -43,7 +43,7 @@
 ## Coding Style & Naming Conventions
 - Shell は `bash` 前提。新規 スクリプト も `#!/usr/bin/env bash` を 付け、`set -o pipefail` を 使う。
 - インデント は 2 スペース を 基本 とし、既存 ファイル の 流儀 に 合わせる。
-- dotfiles の 命名 は 実ファイル 名 を 維持 する（例 `.zshrc` `.yabairc`）。
+- dotfiles の 命名 は 実ファイル 名 を 維持 する（例 `.zshrc` `.vimrc`）。
 
 ## Testing Guidelines
 自動 テスト は ありません。変更 後 は 対象 OS で 実行 し、以下 を 手動 確認 します。

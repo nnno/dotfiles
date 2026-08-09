@@ -62,7 +62,7 @@ make wsl_ubuntu-all
 - Shell スクリプトは `#!/usr/bin/env bash` と `set -o pipefail` を使用
 - 新しいスクリプトでは `bin/lib/common.sh` の共通関数を利用する
 - インデントは 2 スペース、既存ファイルの形式に合わせる
-- dotfiles は実ファイル名を維持（`.zshrc`, `.yabairc` 等）
+- dotfiles は実ファイル名を維持（`.zshrc`, `.vimrc` 等）
 
 ## コミットメッセージ
 
