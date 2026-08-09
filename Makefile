@@ -13,7 +13,7 @@ mac-setup:
 	sh bin/setup_mac.sh
 
 mac-brew:
-	$(HOME)/.homebrew/bin/brew bundle --file=brew/Brewfile
+	brew bundle --file=brew/Brewfile
 
 mac-all: mac-init mac-setup mac-brew
 

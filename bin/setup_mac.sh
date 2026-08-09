@@ -66,9 +66,6 @@ fi
 # ============================================================
 # brew
 # ============================================================
-export PATH=$HOME/.homebrew/bin:$PATH
-export HOMEBREW_CACHE=$HOME/.homebrew/caches
-
 brew bundle --file ./brew/Brewfile
 
 # ============================================================
