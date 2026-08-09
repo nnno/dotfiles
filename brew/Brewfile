@@ -12,7 +12,7 @@ brew "ghq"
 brew "wget"
 brew "freetype"
 brew "fzf"
-brew "pt"                                   # the platinum searcher
+brew "the_platinum_searcher"                # pt
 brew "sheldon"
 brew "tig"
 brew "xh"
@@ -21,6 +21,8 @@ brew "gh"
 brew "lazygit"
 brew "yazi"
 brew "pandoc"
+brew "herdr"                                # agent multiplexer
+brew "mas"                                  # required by Brewfile.macapp
 
 # cask
 # -----------------------------------------------------------------------------

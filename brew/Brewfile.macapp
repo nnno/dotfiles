@@ -2,6 +2,7 @@
 # -----------------------------------------------------------------------------
 # tap 'homebrew/cask'
 # tap "homebrew/cask-fonts"
+tap "docker/tap", trusted: true
 
 # cask - mac application.
 # -----------------------------------------------------------------------------
@@ -15,6 +16,8 @@ cask 'the-unarchiver'
 cask 'visual-studio-code'
 cask 'ghostty'
 cask 'nikitabobko/tap/aerospace'
+cask 'zed'
+cask 'docker/tap/sbx'
 
 
 # mas - mac app store application.
