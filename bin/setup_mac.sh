@@ -56,24 +56,12 @@ mkdir -p "$HOME"/.config/aerospace
 ln -fnsv "$SCRIPT_DIR"/config/aerospace/aerospace.toml "$HOME"/.config/aerospace/aerospace.toml
 
 # ============================================================
-# AI tools (Claude Code, OpenAI Codex)
+# AI tools (Claude Code)
 # ============================================================
 # Claude Code (Native Install)
 if ! type claude &>/dev/null; then
   curl -fsSL https://claude.ai/install.sh | bash
 fi
-
-mkdir -p "$HOME"/.claude
-ln -fnsv "$SCRIPT_DIR"/config/claude/CLAUDE.md "$HOME"/.claude/CLAUDE.md
-ln -fnsv "$SCRIPT_DIR"/config/claude/settings.json "$HOME"/.claude/settings.json
-symlink_subdirs "$SCRIPT_DIR"/config/claude/skills "$HOME"/.claude/skills
-symlink_subdirs "$SCRIPT_DIR"/config/claude/commands "$HOME"/.claude/commands
-setup_serena
-
-# OpenAI Codex
-mkdir -p "$HOME"/.codex
-ln -fnsv "$SCRIPT_DIR"/config/codex/AGENTS.md "$HOME"/.codex/AGENTS.md
-symlink_subdirs "$SCRIPT_DIR"/config/codex/skills "$HOME"/.codex/skills
 
 # ============================================================
 # brew

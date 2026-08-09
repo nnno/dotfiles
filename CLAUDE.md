@@ -11,14 +11,12 @@ macOS / Raspberry Pi 4 / WSL Ubuntu の初期化と dotfiles 管理を行うリ�
 - `bin/` - OS別スクリプト
   - `init_*.sh` - dotfiles 取得までの最小限のブートストラップ
   - `setup_*.sh` - dotfiles を使った設定適用 + ソフトウェアのインストール
-  - `bin/lib/common.sh` - 共通関数（`symlink`, `setup_sheldon`, `symlink_subdirs`）
+  - `bin/lib/common.sh` - 共通関数（`symlink`, `setup_sheldon`）
 - `dotfiles/` - `$HOME` にシンボリックリンクする設定ファイル（`.zshrc`, `.vimrc` 等）
 - `brew/` - Homebrew Bundle 定義（`Brewfile`, `Brewfile.macapp`）
 - `zsh/` - sheldon 用プラグイン定義（`plugins.toml`）
 - `mise/` - mise 設定（`config.toml` → `~/.config/mise/`）
-- `config/` - AI ツール設定
-  - `claude/` → `~/.claude/` にシンボリックリンク
-  - `codex/` → `~/.codex/` にシンボリックリンク
+- `config/` - アプリケーション設定（`aerospace/`, `ghostty/`）
 
 ## init と setup の責務分担
 
@@ -38,9 +36,8 @@ macOS / Raspberry Pi 4 / WSL Ubuntu の初期化と dotfiles 管理を行うリ�
 - dotfiles のシンボリックリンク作成
 - 環境設定（macOS defaults, sheldon, mise 設定）
 - パッケージのインストール（`brew bundle`, `mise install`）
-- AI ツールのインストールと設定
-  - macOS: Claude Code, Codex のインストールと `~/.claude`, `~/.codex` の設定
-  - Raspberry Pi 4 / WSL Ubuntu: Claude Code のインストールのみ
+- AI ツールのインストール（Claude Code）
+  - `~/.claude`, `~/.codex` の設定ファイルは管理対象外
 
 ## コマンド
 

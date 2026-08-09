@@ -42,22 +42,3 @@ function setup_tmux() {
     git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
   fi
 }
-
-function setup_serena() {
-  local CONFIG="$HOME/.serena/serena_config.yml"
-  if [ -f "$CONFIG" ]; then
-    sed -i'' -e 's/^web_dashboard_open_on_launch: true/web_dashboard_open_on_launch: false/' "$CONFIG"
-  fi
-}
-
-# ディレクトリ内の各サブディレクトリとファイルをリンク
-function symlink_subdirs() {
-  local SRC_DIR=$1
-  local DEST_DIR=$2
-  mkdir -p "$DEST_DIR"
-  for item in "$SRC_DIR"/* ; do
-    [[ ! -e "$item" ]] && continue
-    [[ "$(basename "$item")" == ".git" ]] && continue
-    ln -fnsv "$item" "$DEST_DIR"/
-  done
-}
