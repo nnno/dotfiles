@@ -1,10 +1,6 @@
 # path
 export PATH="/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:$PATH"
 
-# homebrew
-export PATH=$HOME/.homebrew/sbin:$HOME/.homebrew/bin:$PATH
-export HOMEBREW_CACHE=$HOME/.homebrew/caches
-
 # sheldon
 eval "$(sheldon source)"
 
@@ -44,7 +40,9 @@ if type go &>/dev/null; then
   export PATH=$PATH:$GOPATH/bin
 fi
 
+export MISE_TRUSTED_CONFIG_PATHS="$HOME/src/github.com/nnno/dotfiles"
 eval "$(mise activate zsh)"
+
 
 # tmux セッション自動命名（ghq リポジトリ移動時）
 if [[ -n "$TMUX" ]] && type ghq &>/dev/null; then

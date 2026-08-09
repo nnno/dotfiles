@@ -5,3 +5,12 @@ jq = "latest"
 node = "22"
 ruff = "latest"
 uv = "latest"
+
+[settings]
+trusted_config_paths = [
+    "~/work",
+    "~/work-cc",
+    "~/src/github.com/nnno",
+    "~/.codex/worktrees",
+]
+
